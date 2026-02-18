@@ -180,7 +180,7 @@ const IntroScreen = ({ onExperienceEnd }) => {
                        gap-2 
                         
                      underline decoration-2 underline-offset-6 decoration-[#ffffff]
-                        text-white font-sourcesans3 font-semibold text-[24px] tracking-wider uppercase
+                        text-white font-sourcesans3 font-medium text-[24px] tracking-wider uppercase
                         cursor-pointer
                       
                     "
