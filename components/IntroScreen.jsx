@@ -11,6 +11,7 @@ const IntroScreen = ({ onExperienceEnd }) => {
     const [muted, setMuted] = useState(true)
     const [video1Ready, setVideo1Ready] = useState(false)
     const [progress, setProgress] = useState(0)
+    const [showLoader, setShowLoader] = useState(true) // New state for loader visibility
     const video1ReadyRef = useRef(false)
 
     // keep ref in sync with state
@@ -20,7 +21,7 @@ const IntroScreen = ({ onExperienceEnd }) => {
 
     // Handle loading sequence with manual 4-second timing
     useEffect(() => {
-        const earlyStops = [31, 100]
+        const earlyStops = [31, 57, 75, 100]
         let index = 0
         let timeout
 
@@ -30,8 +31,7 @@ const IntroScreen = ({ onExperienceEnd }) => {
                 setProgress(earlyStops[index])
                 index++
 
-                // Schedule next stop - distribute 4 seconds across all stops
-                // 4 seconds = 4000ms, divided by number of stops (5) = 800ms between each
+                // Schedule next stop
                 if (index < earlyStops.length) {
                     timeout = setTimeout(showNextStop, 800)
                 }
@@ -41,14 +41,14 @@ const IntroScreen = ({ onExperienceEnd }) => {
         // Start showing numbers after a short delay
         timeout = setTimeout(showNextStop, 400)
 
-        // Ensure we reach 100% exactly at 4 seconds
-        const finalTimeout = setTimeout(() => {
-            setProgress(100)
+        // Hide loader exactly at 4 seconds
+        const hideLoaderTimeout = setTimeout(() => {
+            setShowLoader(false)
         }, 4000)
 
         return () => {
             clearTimeout(timeout)
-            clearTimeout(finalTimeout)
+            clearTimeout(hideLoaderTimeout)
         }
     }, []) // Empty deps array - runs once on mount
 
@@ -148,7 +148,7 @@ const IntroScreen = ({ onExperienceEnd }) => {
             {/* ── LOADER ── */}
             <div
                 className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-black transition-opacity duration-700"
-                style={{ opacity: video1Ready ? 0 : 1, pointerEvents: video1Ready ? 'none' : 'auto' }}
+                style={{ opacity: showLoader ? 1 : 0, pointerEvents: showLoader ? 'auto' : 'none' }}
             >
                 <Image
                     src="/4.png"
