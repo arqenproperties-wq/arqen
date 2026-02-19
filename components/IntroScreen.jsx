@@ -154,7 +154,7 @@ const IntroScreen = ({ onExperienceEnd }) => {
                     height={500}
                     className="w-[250px] h-auto object-contain mb-46"
                 />
-                {/* <SlotLoader progress={progress} /> */}
+                <SlotLoader progress={progress} />
             </div>
 
             {/* ── INTRO CANVAS LAYER ── */}
