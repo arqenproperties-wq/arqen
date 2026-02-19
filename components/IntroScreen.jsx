@@ -18,7 +18,7 @@ const IntroScreen = ({ onExperienceEnd }) => {
         video1ReadyRef.current = video1Ready
     }, [video1Ready])
 
-    // Handle loading sequence - shows all numbers regardless of video load time
+    // Handle loading sequence with manual 4-second timing
     useEffect(() => {
         const earlyStops = [31, 100]
         let index = 0
@@ -30,24 +30,27 @@ const IntroScreen = ({ onExperienceEnd }) => {
                 setProgress(earlyStops[index])
                 index++
 
-                // Schedule next stop after 800ms
-                timeout = setTimeout(showNextStop, 800)
+                // Schedule next stop - distribute 4 seconds across all stops
+                // 4 seconds = 4000ms, divided by number of stops (5) = 800ms between each
+                if (index < earlyStops.length) {
+                    timeout = setTimeout(showNextStop, 800)
+                }
             }
-            // Don't do anything else - let it complete all stops
         }
 
         // Start showing numbers after a short delay
-        timeout = setTimeout(showNextStop, 500)
+        timeout = setTimeout(showNextStop, 400)
 
-        return () => clearTimeout(timeout)
-    }, []) // Empty deps array - runs once on mount
-
-    // Separate effect to handle the final jump to 100 when video is ready
-    useEffect(() => {
-        if (video1Ready) {
+        // Ensure we reach 100% exactly at 4 seconds
+        const finalTimeout = setTimeout(() => {
             setProgress(100)
+        }, 4000)
+
+        return () => {
+            clearTimeout(timeout)
+            clearTimeout(finalTimeout)
         }
-    }, [video1Ready])
+    }, []) // Empty deps array - runs once on mount
 
     useEffect(() => {
         const video = videoRef.current
