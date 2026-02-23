@@ -3,7 +3,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <div className="relative w-full min-h-screen 2xl:h-screen overflow-hidden bg-[#f3eee8]">
+        <div className="relative w-full min-h-screen 2xl:h-screen overflow-hidden ">
             {/* <video
                 autoPlay
                 loop
@@ -13,6 +13,13 @@ const Footer = () => {
             >
                 <source src="/cc-branda-footer.mp4" type="video/mp4" />
             </video> */}
+            <Image
+                src="/footer3.png"
+                alt="Logo"
+                width={1500}
+                height={1500}
+                className="absolute top-0 left-0 w-full h-full object-cover object-bottom -z-10"
+            />
             <div className='w-full grid grid-col-1 gap-12 lg:grid lg:grid-cols-[1fr_2fr] lg:gap-10 2xl:grid 2xl:grid-cols-[1fr_2fr] 2xl:gap-10 px-5 2xl:px-10 py-32 2xl:py-36'>
                 <div className=''>
                     <div className='space-y-1'>
