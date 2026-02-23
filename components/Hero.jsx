@@ -59,7 +59,7 @@ const Hero = ({ showScroll, images }) => {
   text-white [transform:scaleY(0.8)]"
                     >
                         {/* First Line */}
-                        {"Next-gen power".split("").map((char, i) => (
+                        {"Experience Dubai,".split("").map((char, i) => (
                             <span key={`line1-${i}`} className="inline-block">
                                 {char === " " ? "\u00A0" : char}
                             </span>
@@ -69,7 +69,7 @@ const Hero = ({ showScroll, images }) => {
                         <br className="block md:hidden" />
 
                         {/* Second Line */}
-                        {"catamarans".split("").map((char, i) => (
+                        {"reimagined".split("").map((char, i) => (
                             <span key={`line2-${i}`} className="inline-block">
                                 {char === " " ? "\u00A0" : char}
                             </span>
