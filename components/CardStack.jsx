@@ -111,7 +111,7 @@ export default function CardStack() {
     }, []);
 
     return (
-        <div ref={wrapperRef} style={{ height: "400vh" }} className="bg-[#f3eee8]">
+        <div ref={wrapperRef} style={{ height: "400vh" }} className="bg-[#f3eee8] section-about">
             <section
                 ref={sectionRef}
                 className="relative h-screen perspective-[850px] pointer-events-none"

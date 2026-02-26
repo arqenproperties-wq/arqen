@@ -115,6 +115,26 @@ const Header = ({ lenisRef }) => {
         }
     }, [isOpen, lenisRef])
 
+    const scrollToSection = (className) => {
+        const el = document.querySelector(`.${className}`);
+
+        if (!el) return;
+
+        setIsOpen(false);
+
+        // wait menu close animation
+        setTimeout(() => {
+            if (lenisRef?.current) {
+                lenisRef.current.scrollTo(el, {
+                    offset: 0,
+                    duration: 1.2,
+                });
+            } else {
+                el.scrollIntoView({ behavior: "smooth" });
+            }
+        }, 200);
+    };
+
     return (
         <>
             {/* HEADER */}
@@ -204,7 +224,7 @@ const Header = ({ lenisRef }) => {
                     </button>
 
                     <div className="space-y-2 xl:space-y-5 2xl:space-y-7">
-                        <div>
+                        <div onClick={() => scrollToSection("section-arqen")} className="text-black hover:text-white cursor-pointer">
                             <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 font-light tracking-wide [transform:scaleY(0.8)]">
                                 ARQEN 50
                             </h2>
@@ -213,28 +233,28 @@ const Header = ({ lenisRef }) => {
                             </p>
                         </div>
 
-                        <div>
+                        <div onClick={() => scrollToSection("section-about")} className="text-black hover:text-white cursor-pointer">
                             <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 font-light [transform:scaleY(0.8)]">About us</h2>
                             <p className="text-[12px] xl:text-[14px] text-gray-500">
                                 ELICA Yard
                             </p>
                         </div>
 
-                        <div>
+                        <div onClick={() => scrollToSection("section-blog")} className="text-black hover:text-white cursor-pointer">
                             <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 font-light [transform:scaleY(0.8)]">Blog</h2>
                             <p className="text-[12px] xl:text-[14px] text-gray-500">
                                 Stories & Insights
                             </p>
                         </div>
 
-                        <div>
+                        <div onClick={() => scrollToSection("section-contact")} className="text-black hover:text-white cursor-pointer">
                             <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 font-light [transform:scaleY(0.8)]">Contact</h2>
                             <p className="text-[12px] xl:text-[14px] text-gray-500">
                                 Get in touch with us
                             </p>
                         </div>
 
-                        <div>
+                        <div className="text-black hover:text-white cursor-pointer">
                             <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 font-light [transform:scaleY(0.8)]">Dealers</h2>
                             <p className="text-[12px] xl:text-[14px] text-gray-500">
                                 Find a distributor near you
@@ -274,69 +294,3 @@ export default Header
 
 
 
-
-//   <div
-//             ref={headerRef}
-//             className="w-full flex justify-between items-center fixed top-0 left-0 xl:px-6 z-50"
-//         >
-//             <div>
-//                 <Image
-//                     src="/1.png"
-//                     alt="Logo"
-//                     width={500}
-//                     height={500}
-//                     className="w-[125px] xl:w-[175px] h-auto object-contain "
-//                 />
-//             </div>
-//             <div className='w-fit flex justify-between items-center gap-4 md:gap-5 xl:gap-6 mr-4'>
-//                 <div className='flex gap-3'>
-//                     <Image
-//                         src="/globe.svg"
-//                         alt="Logo"
-//                         width={500}
-//                         height={500}
-//                         className="w-[16px] xl:w-[20px] h-auto object-contain "
-//                     />
-//                     <h1 className="hidden md:block text-white text-center font-sourcesans3 font-semibold text-[12px] xl:text-[18px] tracking-wider uppercase">
-//                         English
-//                     </h1>
-//                 </div>
-//                 <div
-//                     className="
-//                             px-[14px] md:px-[18px] xl:px-[20px] py-[6px] md:py-[8px] xl:py-[10px]
-//                             bg-[#b4b4b425]
-//                             rounded-[10px] xl:rounded-[14px]
-//                             flex justify-center items-center
-//                             border border-white
-//                             cursor-pointer
-//                             z-10
-//                             transition-all duration-300
-//                             backdrop-blur-[8.54px]
-//                             shadow-[0_0_2.846px_#0000001a,0_1.423px_11.386px_#0000001f,inset_4.27px_4.27px_.712px_-4.27px_#ffffffbf,inset_-4.27px_-4.27px_.712px_-4.27px_#fffc,inset_1.423px_1.423px_1.423px_-.712px_#ffffffbf,inset_-1.423px_-1.423px_1.423px_-.712px_#ffffffbf,inset_0_0_1.423px_1.423px_#ffffff26,inset_0_0_1.423px_1.423px_#999,inset_0_0_22.771px_#f2f2f2]
-//                         "
-//                 >
-//                     <h1 className="text-white text-center font-sourcesans3 font-semibold text-[12px] xl:text-[18px]  tracking-wider uppercase">
-//                         ARQEN 50
-//                     </h1>
-//                     <Image
-//                         src="/up-right.svg"
-//                         alt="Logo"
-//                         width={500}
-//                         height={500}
-//                         className="w-[20px] h-auto object-contain ml-2"
-//                     />
-//                 </div>
-//                 <div className='flex justify-center items-center gap-2 xl:gap-3 '>
-//                     <Image
-//                         src="/two-lines.svg"
-//                         alt="Logo"
-//                         width={500}
-//                         height={500}
-//                         className="w-[20px] xl:w-[25px] h-auto object-contain mt-1 xl:mt-2  rotate-90"
-//                     />
-//                     <h1 className="text-white text-center font-sourcesans3 font-semibold text-[12px] xl:text-[18px] tracking-wider uppercase">
-//                         More
-//                     </h1>
-//                 </div>
-//             </div>
-//         </div>
