@@ -269,7 +269,7 @@ const Header = ({ lenisRef }) => {
                                 Brochure
                             </h2>
                             <p className="text-[12px] xl:text-[14px] text-gray-500">
-                                Download Omaya 50 details
+                                Download Arqen 50 details
                             </p>
                         </div>
 
