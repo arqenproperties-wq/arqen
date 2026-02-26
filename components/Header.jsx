@@ -3,6 +3,7 @@
 import Image from "next/image"
 import React, { useEffect, useRef, useState } from "react"
 import gsap from "gsap"
+import Link from "next/link"
 
 const Header = ({ lenisRef }) => {
     const headerRef = useRef(null)
@@ -273,15 +274,15 @@ const Header = ({ lenisRef }) => {
                         </div>
 
                         <div className="flex gap-4 pt-4">
-                            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+                            <Link href="https://www.facebook.com/ArqenProperties/" target="_blank" className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
                                 f
-                            </div>
-                            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+                            </Link>
+                            <Link href="https://www.instagram.com/arqenproperties/" target="_blank" className="cursor-pointer w-10 h-10 rounded-full bg-white flex items-center justify-center">
                                 ig
-                            </div>
-                            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+                            </Link>
+                            <Link href="https://www.linkedin.com/company/arqenproperties/" target="_blank" className="cursor-pointer w-10 h-10 rounded-full bg-white flex items-center justify-center">
                                 in
-                            </div>
+                            </Link>
                         </div>
                     </div>
                 </div>
