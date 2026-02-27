@@ -11,7 +11,7 @@ const IntroScreen = ({ onExperienceEnd }) => {
     const [muted, setMuted] = useState(true)
     const [video1Ready, setVideo1Ready] = useState(false)
     const [progress, setProgress] = useState(0)
-    const [showLoader, setShowLoader] = useState(true) // New state for loader visibility
+    const [showLoader, setShowLoader] = useState(true)
     const video1ReadyRef = useRef(false)
     const logoRef = useRef(null)
     const enterBtnRef = useRef(null)
@@ -47,12 +47,10 @@ const IntroScreen = ({ onExperienceEnd }) => {
             )
 
     }, [showLoader])
-    // keep ref in sync with state
     useEffect(() => {
         video1ReadyRef.current = video1Ready
     }, [video1Ready])
 
-    // Handle loading sequence with manual 4-second timing
     useEffect(() => {
         const earlyStops = [31, 57, 100]
         let index = 0
@@ -60,21 +58,17 @@ const IntroScreen = ({ onExperienceEnd }) => {
 
         const showNextStop = () => {
             if (index < earlyStops.length) {
-                // Show current stop
                 setProgress(earlyStops[index])
                 index++
 
-                // Schedule next stop
                 if (index < earlyStops.length) {
                     timeout = setTimeout(showNextStop, 800)
                 }
             }
         }
 
-        // Start showing numbers after a short delay
         timeout = setTimeout(showNextStop, 400)
 
-        // Hide loader exactly at 4 seconds
         const hideLoaderTimeout = setTimeout(() => {
             setShowLoader(false)
         }, 4000)
@@ -83,7 +77,7 @@ const IntroScreen = ({ onExperienceEnd }) => {
             clearTimeout(timeout)
             clearTimeout(hideLoaderTimeout)
         }
-    }, []) // Empty deps array - runs once on mount
+    }, [])
 
     useEffect(() => {
         const video = videoRef.current
@@ -179,10 +173,8 @@ const IntroScreen = ({ onExperienceEnd }) => {
         const video2 = video2Ref.current
         if (!video2) return
 
-        // Jump to last frame
         video2.currentTime = video2.duration
 
-        // Make sure end callback triggers
         onExperienceEnd?.()
     }
 
@@ -201,14 +193,12 @@ const IntroScreen = ({ onExperienceEnd }) => {
     return (
         <div className="relative w-full h-screen overflow-hidden">
 
-            {/* ── LOADER ── */}
             <div
                 className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-white transition-opacity duration-700"
                 style={{ opacity: showLoader ? 1 : 0, pointerEvents: showLoader ? 'auto' : 'none' }}
             >
                 <div className="relative w-[225px] xl:w-[250px] h-auto mb-46">
 
-                    {/* Base Light Logo */}
                     <Image
                         src="/3.png"
                         alt="Logo"
@@ -217,7 +207,6 @@ const IntroScreen = ({ onExperienceEnd }) => {
                         className="w-full h-auto object-contain opacity-10"
                     />
 
-                    {/* Fill Logo */}
                     <div
                         className="absolute inset-0 transition-all duration-500 ease-out"
                         style={{
@@ -236,7 +225,6 @@ const IntroScreen = ({ onExperienceEnd }) => {
                 <SlotLoader progress={progress} />
             </div>
 
-            {/* ── INTRO CANVAS LAYER ── */}
             <div
                 className="absolute inset-0 transition-opacity duration-700"
                 style={{ opacity: entered ? 0 : 1, pointerEvents: entered ? 'none' : 'auto' }}
@@ -299,7 +287,6 @@ const IntroScreen = ({ onExperienceEnd }) => {
                 </div>
             </div>
 
-            {/* ── EXPERIENCE VIDEO ── */}
             <div
                 className="absolute inset-0 transition-opacity duration-700"
                 style={{ opacity: entered ? 1 : 0 }}

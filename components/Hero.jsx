@@ -3,7 +3,6 @@ import { VideoOnScroll } from './VideoOnScroll'
 import { useGSAP } from '@gsap/react';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from 'next/image';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -12,13 +11,13 @@ const Hero = ({ showScroll, images }) => {
     const headingRef = useRef(null)
     useGSAP(() => {
         gsap.to(textRef.current, {
-            y: 0,              // move down slightly
+            y: 0,
             opacity: 0,
             ease: "power2.out",
             scrollTrigger: {
                 trigger: ".hero",
                 start: "top top",
-                end: "top+=100 top", // adjust distance of fade
+                end: "top+=100 top",
                 scrub: true,
             }
         });
@@ -58,17 +57,14 @@ const Hero = ({ showScroll, images }) => {
   leading-12 2xl:leading-20 font-opensans font-light tracking-tight 
   text-white [transform:scaleY(0.8)]"
                     >
-                        {/* First Line */}
                         {"Experience Dubai,".split("").map((char, i) => (
                             <span key={`line1-${i}`} className="inline-block">
                                 {char === " " ? "\u00A0" : char}
                             </span>
                         ))}
 
-                        {/* Line break only on mobile */}
                         <br className="block md:hidden" />
 
-                        {/* Second Line */}
                         {"reimagined".split("").map((char, i) => (
                             <span key={`line2-${i}`} className="inline-block">
                                 {char === " " ? "\u00A0" : char}

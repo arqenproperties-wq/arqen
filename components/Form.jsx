@@ -68,18 +68,15 @@ const Form = () => {
     return (
         <div className="section-contact w-full  bg-[#f3eee8] flex flex-col justify-center items-center pt-32 md:pt-20  px-5 2xl:px-6">
 
-            {/* Heading */}
             <h1 className="text-[36px] 2xl:text-[60px] font-opensans font-light tracking-tight text-black [transform:scaleY(0.75)] mb-10 2xl:mb-16 text-center">
                 Get in touch with us
             </h1>
 
-            {/* Form Container */}
             <form
                 onSubmit={handleSubmit}
                 className="w-full lg:max-w-2xl 2xl:max-w-4xl font-sourcesans3"
             >
 
-                {/* Top Row */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 2xl:gap-12 mb-8 2xl:mb-12">
 
                     <div>
@@ -121,7 +118,6 @@ const Form = () => {
 
                 </div>
 
-                {/* Message */}
                 <div className="mb-10">
                     <label className="text-[15px] text-gray-600">Message*</label>
                     <textarea
@@ -134,7 +130,6 @@ const Form = () => {
                     />
                 </div>
 
-                {/* Checkbox */}
                 <div className="flex items-center gap-3 mb-16">
                     <input
                         name="agree"
@@ -148,7 +143,6 @@ const Form = () => {
                     </p>
                 </div>
 
-                {/* Button */}
                 <div className="flex justify-center">
                     <button
                         type="submit"

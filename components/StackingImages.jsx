@@ -37,9 +37,7 @@ export default function StackingImages() {
         const PHASE2_START = 0.4;
 
         function applyTransforms(progress) {
-            // ===============================
-            // TEXT FADE OUT (0 → 30% scroll)
-            // ===============================
+
             const textFadeEnd = 0.3;
             const textOpacity = gsap.utils.clamp(
                 0.15,
@@ -51,11 +49,8 @@ export default function StackingImages() {
                 opacity: textOpacity,
             });
 
-            // ===============================
-            // IMAGE ANIMATION
-            // ===============================
+
             images.forEach((el, i) => {
-                // Phase 1 — scale in one by one
                 const sliceSize = (PHASE1_END / count) * 1.8;
                 const phase1LocalStart = i * (PHASE1_END / count);
 
@@ -68,7 +63,6 @@ export default function StackingImages() {
                 const scale =
                     gsap.parseEase("power1.inOut")(phase1Progress);
 
-                // Phase 2 — spiral inward
                 const phase2Progress = gsap.utils.clamp(
                     0,
                     1,

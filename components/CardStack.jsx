@@ -8,9 +8,8 @@ gsap.registerPlugin(ScrollTrigger);
 const CARDS = [
     {
         id: 1,
-        // bg color or bg image — use one:
-        bg: "bg-[#02737C]",           // ← swap with your color
-        bgImage: "/card/1.webp",                   // ← or put image url here e.g. "/images/card1.jpg"
+        bg: "bg-[#02737C]",
+        bgImage: "/card/1.webp",
         zIndex: "z-[5]",
         headline: <>Signature Residences.<br />Dubai's finest addresses.</>,
         body: "From Palm Jumeirah penthouses to Downtown sky suites — Arqen curates only the residences that set the standard, not follow it.",

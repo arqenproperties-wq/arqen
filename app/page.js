@@ -36,7 +36,7 @@ export default function Home() {
 
 
   const [showScroll, setShowScroll] = useState(false)
-  const [preloadCanvas, setPreloadCanvas] = useState(false)  // NEW
+  const [preloadCanvas, setPreloadCanvas] = useState(false)
   const [images, setImages] = useState([])
   const [framesReady, setFramesReady] = useState(false)
 
@@ -70,12 +70,11 @@ export default function Home() {
       {!showScroll && (
         <IntroScreen
           onExperienceEnd={() => setShowScroll(true)}
-          onNearEnd={() => setPreloadCanvas(true)}  // NEW
+          onNearEnd={() => setPreloadCanvas(true)}
         />
       )}
       {(preloadCanvas || showScroll) && framesReady && (
         <>
-
           <Header lenisRef={lenisRef} />
           <Hero showScroll={showScroll} images={images} />
           <Quote />

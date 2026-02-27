@@ -28,7 +28,6 @@ const Stories = () => {
     return (
         <div className="section-blog w-full min-h-screen bg-[#f3eee8] flex flex-col justify-center items-center py-20  2xl:py-40">
 
-            {/* Heading */}
             <h1 className="text-[36px] 2xl:text-[60px] font-opensans font-light tracking-tight text-black [transform:scaleY(0.75)] mb-16 text-center">
                 Latest stories
             </h1>

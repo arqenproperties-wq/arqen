@@ -5,7 +5,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Define your text panels here — add as many as you need
 const TEXT_PANELS = [
     {
         id: "panel-1",
@@ -51,7 +50,6 @@ export const VideoOnScroll = ({ images, startFrame = 1, endFrame = 531 }) => {
 
         context.drawImage(frameImages[0], 0, 0, canvas.width, canvas.height);
 
-        // — "Scroll to explore" fade out
         gsap.to(textRef.current, {
             y: -80,
             opacity: 0,
@@ -64,7 +62,6 @@ export const VideoOnScroll = ({ images, startFrame = 1, endFrame = 531 }) => {
             },
         });
 
-        // — Main frame scrub
         gsap.to(frame, {
             index: frameImages.length - 1,
             snap: "index",
@@ -79,19 +76,16 @@ export const VideoOnScroll = ({ images, startFrame = 1, endFrame = 531 }) => {
                 onUpdate: (self) => {
                     const progress = self.progress;
 
-                    // Draw frame
                     const img = frameImages[Math.floor(frame.index)];
                     context.clearRect(0, 0, canvas.width, canvas.height);
                     context.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-                    // Wrapper opacity
                     if (progress >= 0.9) {
                         gsap.to(wrapperRef.current, { opacity: 0, duration: 0.4, ease: "power2.out", overwrite: true });
                     } else {
                         gsap.to(wrapperRef.current, { opacity: 1, duration: 0.2, overwrite: true });
                     }
 
-                    // Drive each text panel
                     TEXT_PANELS.forEach((panel) => {
                         const el = panelRefs.current[panel.id];
                         if (!el) return;
@@ -101,18 +95,14 @@ export const VideoOnScroll = ({ images, startFrame = 1, endFrame = 531 }) => {
                         const offsetX = side === "left" ? -60 : 60;
 
                         if (progress < progressStart) {
-                            // Before panel: hidden, offset out
                             gsap.set(el, { opacity: 0, x: offsetX });
                         } else if (progress < midPoint) {
-                            // Fading in
                             const t = (progress - progressStart) / (midPoint - progressStart);
                             gsap.set(el, { opacity: t, x: offsetX * (1 - t) });
                         } else if (progress < progressEnd) {
-                            // Fading out
                             const t = (progress - midPoint) / (progressEnd - midPoint);
                             gsap.set(el, { opacity: 1 - t, x: offsetX * t });
                         } else {
-                            // After panel: hidden
                             gsap.set(el, { opacity: 0, x: offsetX });
                         }
                     });
@@ -133,7 +123,7 @@ export const VideoOnScroll = ({ images, startFrame = 1, endFrame = 531 }) => {
     return (
         <div ref={wrapperRef} className="w-full h-screen absolute top-0 left-0 z-10">
 
-            {/* Scroll to explore */}
+
             <div
                 ref={textRef}
                 className="text-white text-center hidden md:flex font-light flex-col justify-center items-center font-opensans text-[20px] xl:text-[20px] absolute bottom-6 left-1/2 -translate-x-1/2 [transform:scaleY(0.8)]"
@@ -143,7 +133,7 @@ export const VideoOnScroll = ({ images, startFrame = 1, endFrame = 531 }) => {
                 <p className="relative left-6">explore</p>
             </div>
 
-            {/* Scroll-driven text panels */}
+
             {TEXT_PANELS.map((panel) => (
                 <div
                     key={panel.id}
@@ -154,7 +144,7 @@ export const VideoOnScroll = ({ images, startFrame = 1, endFrame = 531 }) => {
             ${panel.side === "left" ? "left-10 md:left-16 text-left" : "right-10 md:right-16 text-right"}
           `}
                 >
-                    {/* Decorative line */}
+
                     <div
                         className={`
               h-px w-16 bg-white/60 mb-4

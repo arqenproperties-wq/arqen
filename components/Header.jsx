@@ -32,7 +32,7 @@ const Header = ({ lenisRef }) => {
                 y: 0,
                 opacity: 1,
                 duration: 0.8,
-                stagger: 0.2
+                stagger: 0.1
             }
         )
 
@@ -68,7 +68,6 @@ const Header = ({ lenisRef }) => {
         }
     }, [])
 
-    // MENU ANIMATION
     useEffect(() => {
         if (!overlayRef.current || !menuRef.current) return
 
@@ -123,7 +122,6 @@ const Header = ({ lenisRef }) => {
 
         setIsOpen(false);
 
-        // wait menu close animation
         setTimeout(() => {
             if (lenisRef?.current) {
                 lenisRef.current.scrollTo(el, {
@@ -138,19 +136,20 @@ const Header = ({ lenisRef }) => {
 
     return (
         <>
-            {/* HEADER */}
             <div
                 ref={headerRef}
                 className="w-full flex justify-between items-center fixed top-0 left-0 xl:px-6 z-50"
             >
-                <Image
-                    ref={logoRef}
-                    src="/1.png"
-                    alt="Logo"
-                    width={500}
-                    height={500}
-                    className="w-[125px] xl:w-[175px] cursor-pointer"
-                />
+                <Link href="/" className="cursor-pointer">
+                    <Image
+                        ref={logoRef}
+                        src="/1.png"
+                        alt="Logo"
+                        width={500}
+                        height={500}
+                        className="w-[125px] xl:w-[175px] cursor-pointer"
+                    />
+                </Link>
                 <div className='w-fit flex justify-between items-center gap-4 lg:gap-6 xl:gap-6 mr-4'>
                     <div ref={langRef} className='flex gap-3 cursor-pointer'>
                         <Image
@@ -206,17 +205,14 @@ const Header = ({ lenisRef }) => {
 
             </div>
 
-            {/* OVERLAY */}
             <div
                 ref={overlayRef}
                 className="w-full h-screen bg-black/40  fixed inset-0  flex justify-center items-start  z-60 opacity-0 pointer-events-none hidden"
             >
-                {/* MENU CARD */}
                 <div
                     ref={menuRef}
                     className=" w-[250px] md:w-[275px] xl:w-[350px] 2xl:w-[375px]  fixed top-3 xl:top-4 right-4  xl:right-8 bg-white/80 backdrop-blur-xl rounded-[22px] xl:rounded-[28px] px-5 py-5  xl:px-7 xl:py-6 "
                 >
-                    {/* CLOSE */}
                     <button
                         onClick={() => setIsOpen(false)}
                         className="w-[30px] absolute top-3 xl:top-5 right-3 xl:right-5 text-gray-600 text-lg xl:text-xl cursor-pointer z-10"
@@ -224,43 +220,43 @@ const Header = ({ lenisRef }) => {
                         ✕
                     </button>
 
-                    <div className="space-y-2 xl:space-y-5 2xl:space-y-7">
-                        <div onClick={() => scrollToSection("section-arqen")} className="text-black hover:text-white cursor-pointer">
+                    <div className="flex flex-col space-y-2 xl:space-y-5 2xl:space-y-7">
+                        <Link href="/" className="text-black hover:text-white cursor-pointer">
                             <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 font-light tracking-wide [transform:scaleY(0.8)]">
                                 ARQEN 50
                             </h2>
                             <p className="text-[12px] xl:text-[14px] text-gray-500">
                                 Layout & Features
                             </p>
-                        </div>
+                        </Link>
 
-                        <div onClick={() => scrollToSection("section-about")} className="text-black hover:text-white cursor-pointer">
+                        <Link href="/about" className="text-black hover:text-white cursor-pointer">
                             <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 font-light [transform:scaleY(0.8)]">About us</h2>
                             <p className="text-[12px] xl:text-[14px] text-gray-500">
                                 ELICA Yard
                             </p>
-                        </div>
+                        </Link>
 
-                        <div onClick={() => scrollToSection("section-blog")} className="text-black hover:text-white cursor-pointer">
+                        <Link href="/blog" className="text-black hover:text-white cursor-pointer">
                             <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 font-light [transform:scaleY(0.8)]">Blog</h2>
                             <p className="text-[12px] xl:text-[14px] text-gray-500">
                                 Stories & Insights
                             </p>
-                        </div>
+                        </Link>
 
-                        <div onClick={() => scrollToSection("section-contact")} className="text-black hover:text-white cursor-pointer">
+                        <Link href="/contact" className="text-black hover:text-white cursor-pointer">
                             <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 font-light [transform:scaleY(0.8)]">Contact</h2>
                             <p className="text-[12px] xl:text-[14px] text-gray-500">
                                 Get in touch with us
                             </p>
-                        </div>
+                        </Link>
 
-                        <div className="text-black hover:text-white cursor-pointer">
+                        <Link href="/dealers" className="text-black hover:text-white cursor-pointer">
                             <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 font-light [transform:scaleY(0.8)]">Dealers</h2>
                             <p className="text-[12px] xl:text-[14px] text-gray-500">
                                 Find a distributor near you
                             </p>
-                        </div>
+                        </Link>
 
                         <hr className="w-[70%] my-4 border border-[#00000020]" />
 
