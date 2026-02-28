@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from "react"
 import gsap from "gsap"
 import Link from "next/link"
 
-const Header = ({ lenisRef }) => {
+const Header2 = ({ lenisRef }) => {
     const headerRef = useRef(null)
     const lastScroll = useRef(0)
 
@@ -143,7 +143,7 @@ const Header = ({ lenisRef }) => {
                 <Link href="/" className="cursor-pointer">
                     <Image
                         ref={logoRef}
-                        src="/1.png"
+                        src="/2.png"
                         alt="Logo"
                         width={500}
                         height={500}
@@ -153,17 +153,17 @@ const Header = ({ lenisRef }) => {
                 <div className='w-fit flex justify-between items-center gap-4 lg:gap-6 xl:gap-6 mr-4'>
                     <div ref={langRef} className='flex gap-3 cursor-pointer'>
                         <Image
-                            src="/globe.svg"
+                            src="/globe1.svg"
                             alt="Logo"
                             width={500}
                             height={500}
                             className="w-[16px] xl:w-[20px] h-auto object-contain "
                         />
-                        <h1 className="hidden md:block text-white text-center font-sourcesans3 font-semibold text-[12px] lg:text-[16px] xl:text-[18px] tracking-wider uppercase">
+                        <h1 className="hidden md:block text-black text-center font-sourcesans3 font-semibold text-[12px] lg:text-[16px] xl:text-[18px] tracking-wider uppercase">
                             English
                         </h1>
                     </div>
-                    <div
+                    {/* <div
                         ref={arqenRef}
                         className="
                             px-[14px] md:px-[18px] xl:px-[20px] py-[6px] md:py-[8px] xl:py-[10px] cursor-pointer
@@ -178,7 +178,7 @@ const Header = ({ lenisRef }) => {
                             shadow-[0_0_2.846px_#0000001a,0_1.423px_11.386px_#0000001f,inset_4.27px_4.27px_.712px_-4.27px_#ffffffbf,inset_-4.27px_-4.27px_.712px_-4.27px_#fffc,inset_1.423px_1.423px_1.423px_-.712px_#ffffffbf,inset_-1.423px_-1.423px_1.423px_-.712px_#ffffffbf,inset_0_0_1.423px_1.423px_#ffffff26,inset_0_0_1.423px_1.423px_#999,inset_0_0_22.771px_#f2f2f2]
                         "
                     >
-                        <h1 className="text-white text-center font-sourcesans3 font-semibold text-[12px] lg:text-[16px]  xl:text-[18px]  tracking-wider uppercase">
+                        <h1 className="text-black text-center font-sourcesans3 font-semibold text-[12px] lg:text-[16px]  xl:text-[18px]  tracking-wider uppercase">
                             ARQEN 50
                         </h1>
                         <Image
@@ -188,16 +188,16 @@ const Header = ({ lenisRef }) => {
                             height={500}
                             className="w-[20px] h-auto object-contain ml-2"
                         />
-                    </div>
+                    </div> */}
                     <div ref={moreRef} onClick={() => setIsOpen(true)} className='flex justify-center items-center gap-2 xl:gap-3 cursor-pointer'>
                         <Image
-                            src="/two-lines.svg"
+                            src="/two-lines1.svg"
                             alt="Logo"
                             width={500}
                             height={500}
                             className="w-[20px] xl:w-[25px] h-auto object-contain mt-1 xl:mt-2  rotate-90"
                         />
-                        <h1 className="text-white text-center font-sourcesans3 font-semibold text-[12px] lg:text-[16px]  xl:text-[18px] tracking-wider uppercase">
+                        <h1 className="text-black text-center font-sourcesans3 font-semibold text-[12px] lg:text-[16px]  xl:text-[18px] tracking-wider uppercase">
                             More
                         </h1>
                     </div>
@@ -287,7 +287,7 @@ const Header = ({ lenisRef }) => {
     )
 }
 
-export default Header
+export default Header2
 
 
 

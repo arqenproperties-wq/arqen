@@ -46,7 +46,7 @@ const CARDS = [
     },
 ];
 
-export default function CardStack() {
+export default function CardStack2() {
     const wrapperRef = useRef(null);
     const sectionRef = useRef(null);
     const cardsRef = useRef([]);
@@ -70,7 +70,7 @@ export default function CardStack() {
         const trigger = ScrollTrigger.create({
             trigger: wrapperRef.current,
             start: "top top",
-            end: "bottom+=1000 bottom",
+            end: "bottom+=700 bottom",
             pin: sectionRef.current,
             scrub: 1,
             onUpdate: (self) => {
@@ -113,7 +113,7 @@ export default function CardStack() {
         <div ref={wrapperRef} style={{ height: "400vh" }} className="bg-[#f3eee8] section-about relative">
             <section
                 ref={sectionRef}
-                className="relative h-screen perspective-[850px] pointer-events-none"
+                className="relative h-screen perspective-[850px]  pointer-events-none"
             >
                 {CARDS.map((card, i) => (
                     <div

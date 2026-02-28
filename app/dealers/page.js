@@ -1,9 +1,11 @@
 'use client'
 import Footer from '@/components/Footer'
-import Form from '@/components/Form'
-import Header2 from '@/components/Header2'
 import Lenis from 'lenis'
 import React, { useEffect, useRef } from 'react'
+import Dealers from './Dealers'
+import Header2 from '@/components/Header2'
+
+
 
 const page = () => {
     const lenisRef = useRef(null)
@@ -24,9 +26,9 @@ const page = () => {
         }
     }, [])
     return (
-        <div>
+        <div className='bg-[#f3eee8]'>
             <Header2 />
-            <Form />
+            <Dealers />
             <Footer />
         </div>
     )
