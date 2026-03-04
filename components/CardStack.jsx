@@ -19,7 +19,7 @@ const CARDS = [
     },
     {
         id: 2,
-        bg: "bg-[#1d3e57]",
+        bg: "bg-[#AAD2EC]",
         bgImage: "",
         zIndex: "z-[4]",
         headline: <>Investment<br />Intelligence.</>,
@@ -32,7 +32,7 @@ const CARDS = [
     },
     {
         id: 3,
-        bg: "bg-[#02737c]",
+        bg: "bg-[#00000090]",
         bgImage: "",
         zIndex: "z-[3]",
         headline: <>Live Ahead.<br />Live Arqen.</>,
@@ -119,7 +119,7 @@ export default function CardStack() {
                     <div
                         key={card.id}
                         ref={(el) => (cardsRef.current[i] = el)}
-                        className={`absolute top-1/2 left-1/2 w-[95%] h-[90%] p-4 md:p-6 xl:pl-10 xl:py-10 rounded-[24px] md:rounded-[30px] xl:rounded-[40px]
+                        className={`absolute top-1/2 left-1/2 w-[85%] h-[80%] p-4 md:p-6 xl:pl-10 xl:py-10 rounded-[20px] md:rounded-[26px] xl:rounded-[30px]
                                  text-white flex gap-4 origin-bottom will-change-transform overflow-hidden
                                  ${card.bgImage ? "" : card.bg} ${card.zIndex}`}
                         style={card.bgImage ? {

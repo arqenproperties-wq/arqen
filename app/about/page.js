@@ -1,34 +1,18 @@
 'use client'
 import Footer from '@/components/Footer'
-import Lenis from 'lenis'
-import React, { useEffect, useRef } from 'react'
 import ScrollScaleImage from './ScrollScaleImage'
 import About from './About'
 import CardStack2 from '@/components/CardStack2'
 import PeopleSection from './PeopleSection'
 import Header2 from '@/components/Header2'
+import SmoothScroll from '../../components/SmoothScroll'
 
 
 const page = () => {
-    const lenisRef = useRef(null)
 
-    useEffect(() => {
-        const lenis = new Lenis()
-        lenisRef.current = lenis
-
-        const raf = (time) => {
-            lenis.raf(time)
-            requestAnimationFrame(raf)
-        }
-
-        requestAnimationFrame(raf)
-
-        return () => {
-            lenis.destroy()
-        }
-    }, [])
     return (
         <div className='bg-[#f3eee8]'>
+            <SmoothScroll />
             <Header2 />
             <ScrollScaleImage />
             <About />

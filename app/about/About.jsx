@@ -66,7 +66,7 @@ export default function About() {
                         Powered by Elica Group
                     </p>
                     <h2
-                        className="text-black font-opensans [transform:scaleY(0.75)] text-[32px] md:text-[38px] xl:text-[44px] 2xl:text-[50px]  font-light leading-[44px] md:leading-[48px] xl:leading-[48px] 2xl:leading-[48px] tracking-tight"
+                        className="text-black font-opensans [transform:scaleY(0.75)] text-[32px] md:text-[38px] xl:text-[44px] 2xl:text-[50px]  font-light leading-[44px] md:leading-[48px] xl:leading-[56px] 2xl:leading-[62px] "
                     >
                         With over 30 years of industrial expertise, the team brings a
                         precision-driven approach to yacht building.
@@ -74,7 +74,7 @@ export default function About() {
                 </div>
                 <div className="xl:max-w-[45%]  relative xl:pl-20">
                     <h2
-                        className="text-black font-opensans [transform:scaleY(0.75)] text-[32px] md:text-[38px] xl:text-[44px] 2xl:text-[50px]  font-light leading-[44px] md:leading-[48px] xl:leading-[48px] 2xl:leading-[48px] tracking-tight"
+                        className="text-black font-opensans [transform:scaleY(0.75)] text-[32px] md:text-[38px] xl:text-[44px] 2xl:text-[50px]  font-light leading-[44px] md:leading-[48px] xl:leading-[56px] 2xl:leading-[62px] "
                     >
                         The goal — to set a new standard in serial production luxury power
                         cats in the global market.
@@ -83,7 +83,7 @@ export default function About() {
                 <div className="xl:max-w-[90%] xl:pl-[50%] ">
 
                     <h2
-                        className="text-black font-opensans [transform:scaleY(0.75)] text-[32px] md:text-[38px] xl:text-[44px] 2xl:text-[50px]  font-light leading-[44px] md:leading-[48px] xl:leading-[48px] 2xl:leading-[48px] tracking-tight"
+                        className="text-black font-opensans [transform:scaleY(0.75)] text-[32px] md:text-[38px] xl:text-[44px] 2xl:text-[50px]  font-light leading-[44px] md:leading-[48px] xl:leading-[56px] 2xl:leading-[62px] "
                     >
                         With over 30 years of industrial expertise, the team brings a
                         precision-driven approach to yacht building.

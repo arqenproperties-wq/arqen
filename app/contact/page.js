@@ -2,29 +2,13 @@
 import Footer from '@/components/Footer'
 import Form from '@/components/Form'
 import Header2 from '@/components/Header2'
-import Lenis from 'lenis'
-import React, { useEffect, useRef } from 'react'
+import SmoothScroll from '../../components/SmoothScroll'
 
 const page = () => {
-    const lenisRef = useRef(null)
 
-    useEffect(() => {
-        const lenis = new Lenis()
-        lenisRef.current = lenis
-
-        const raf = (time) => {
-            lenis.raf(time)
-            requestAnimationFrame(raf)
-        }
-
-        requestAnimationFrame(raf)
-
-        return () => {
-            lenis.destroy()
-        }
-    }, [])
     return (
         <div>
+            <SmoothScroll />
             <Header2 />
             <Form />
             <Footer />
