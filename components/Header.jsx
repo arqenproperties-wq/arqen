@@ -179,7 +179,7 @@ const Header = ({ lenisRef }) => {
                         "
                     >
                         <h1 className="text-white text-center font-sourcesans3 font-semibold text-[12px] lg:text-[16px]  xl:text-[18px]  tracking-wider uppercase">
-                            ARQEN 50
+                            ARQEN
                         </h1>
                         <Image
                             src="/up-right.svg"
@@ -223,7 +223,7 @@ const Header = ({ lenisRef }) => {
                     <div className="flex flex-col space-y-2 xl:space-y-5 2xl:space-y-7">
                         <Link href="/" className="text-black hover:text-white cursor-pointer">
                             <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 font-light tracking-wide [transform:scaleY(0.8)]">
-                                ARQEN 50
+                                ARQEN
                             </h2>
                             <p className="text-[12px] xl:text-[14px] text-gray-500">
                                 Layout & Features
@@ -265,7 +265,7 @@ const Header = ({ lenisRef }) => {
                                 Brochure
                             </h2>
                             <p className="text-[12px] xl:text-[14px] text-gray-500">
-                                Download Arqen 50 details
+                                Download Arqen details
                             </p>
                         </div>
 

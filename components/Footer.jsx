@@ -35,7 +35,7 @@ const Footer = () => {
                             Welcome to arqen
                         </h1>
                         <p className='font-sourcesans3 font-extralight text-[16px] 2xl:text-[18px]'>
-                            © 2025 Arqen
+                            © 2026 Arqen
                         </p>
                     </div>
                 </div>
@@ -48,7 +48,7 @@ const Footer = () => {
                             Home
                         </Link>
                         <Link href="/" className='font-sourcesans3  text-[15px] 2xl:text-[18px]'>
-                            ARQEN 50
+                            ARQEN
                         </Link>
                         <Link href="/about" className='font-sourcesans3  text-[15px] 2xl:text-[18px]'>
                             About us
