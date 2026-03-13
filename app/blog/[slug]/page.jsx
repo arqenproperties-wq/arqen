@@ -6,22 +6,28 @@ import Footer from "../../../components/Footer";
 import SmoothScroll from "../../../components/SmoothScroll";
 import MoreStories from "../More";
 
-const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]`;
-
+const POST_QUERY = `
+*[
+  _type == "post" &&
+  slug.current == $slug &&
+  publishedAt <= now()
+][0]
+`;
 const builder = imageUrlBuilder(client);
 
 const urlFor = (source) => builder.image(source);
 
-const POSTS_QUERY2 = `*[
+const POSTS_QUERY2 = `
+*[
   _type == "post" &&
-  defined(slug.current)
-]| order(publishedAt desc)[0...3]{
+  defined(slug.current) &&
+  publishedAt <= now()
+] | order(publishedAt desc)[0...3]{
   _id,
   title,
   slug,
   publishedAt,
-  image,
-  body
+  image
 }`;
 
 const options = { next: { revalidate: 30 } };
@@ -49,7 +55,7 @@ export default async function PostPage({
                             year: "numeric",
                         })}
                     </p>
-                    <h1 className="font-opensans font-light tracking-tight leading-10 md:leading-12 xl:leading-14  2xl:leading-16 text-[32px] md:text-[36px] xl:text-[42px] 2xl:text-[50px] text-black [transform:scaleY(0.8)] ">{post.title}</h1>
+                    <h1 className="font-opensans font-light  leading-10 md:leading-12 xl:leading-14  2xl:leading-16 text-[32px] md:text-[36px] xl:text-[42px] 2xl:text-[50px] text-black [transform:scaleY(0.8)] ">{post.title}</h1>
                     {postImageUrl && (
                         <img
                             src={postImageUrl}
@@ -72,8 +78,26 @@ export default async function PostPage({
 
 const components = {
     block: {
+        h1: ({ children }) => (
+            <h1 className="font-opensans font-light text-[24px] md:text-[24px] xl:text-[32px] 2xl:text-[32px] leading-[1.2] mt-10 mb-4 text-black [transform:scaleY(0.8)] ">
+                {children}
+            </h1>
+        ),
+
+        h2: ({ children }) => (
+            <h2 className="font-opensans font-light text-[24px] md:text-[24px] xl:text-[32px] 2xl:text-[32px] leading-[1.2] mt-10 mb-4 text-black [transform:scaleY(0.8)] ">
+                {children}
+            </h2>
+        ),
+
+        h3: ({ children }) => (
+            <h3 className="font-opensans font-light text-[24px] md:text-[24px] xl:text-[32px] 2xl:text-[32px] leading-[1.3] mt-8 mb-4 text-black">
+                {children}
+            </h3>
+        ),
+
         normal: ({ children }) => (
-            <p className="mb-[32px]">
+            <p className="mb-[32px] font-sourcesans3 text-[16px] md:text-[16px] xl:text-[18px] 2xl:text-[18px]">
                 {children}
             </p>
         ),

@@ -5,16 +5,17 @@ import { client } from '../../sanity/lib/client'
 import BlogList from "./BlogList";
 
 
-const POSTS_QUERY = `*[
+const POSTS_QUERY = `
+*[
   _type == "post" &&
-  defined(slug.current)
-]| order(publishedAt desc){
+  defined(slug.current) &&
+  publishedAt <= now()
+] | order(publishedAt desc){
   _id,
   title,
   slug,
   publishedAt,
-  image,
-  body
+  image
 }`;
 
 const options = { next: { revalidate: 30 } };
@@ -23,15 +24,15 @@ const options = { next: { revalidate: 30 } };
 
 export default async function Page() {
 
-    const posts = await client.fetch(POSTS_QUERY, {}, options);
+  const posts = await client.fetch(POSTS_QUERY, {}, options);
 
-    return (
-        <div className="bg-[#f3eee8]">
-            <SmoothScroll />
-            <Header2 />
-            <BlogList posts={posts} />
+  return (
+    <div className="bg-[#f3eee8]">
+      <SmoothScroll />
+      <Header2 />
+      <BlogList posts={posts} />
 
-            <Footer />
-        </div>
-    );
+      <Footer />
+    </div>
+  );
 }

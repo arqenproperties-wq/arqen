@@ -151,7 +151,7 @@ const Header = ({ lenisRef }) => {
                     />
                 </Link>
                 <div className='w-fit flex justify-between items-center gap-4 lg:gap-6 xl:gap-6 mr-4'>
-                    <div ref={langRef} className='flex gap-3 cursor-pointer'>
+                    {/* <div ref={langRef} className='flex gap-3 cursor-pointer'>
                         <Image
                             src="/globe.svg"
                             alt="Logo"
@@ -162,11 +162,11 @@ const Header = ({ lenisRef }) => {
                         <h1 className="hidden md:block text-white text-center font-sourcesans3 font-semibold text-[12px] lg:text-[16px] xl:text-[18px] tracking-wider uppercase">
                             English
                         </h1>
-                    </div>
+                    </div> */}
                     <div
                         ref={arqenRef}
                         className="
-                            px-[14px] md:px-[18px] xl:px-[20px] py-[6px] md:py-[8px] xl:py-[10px] cursor-pointer
+                            px-[14px] md:px-[18px] xl:px-[24px] py-[6px] md:py-[8px] xl:py-[10px] cursor-pointer
                             bg-[#b4b4b425]
                             rounded-[10px] xl:rounded-[14px]
                             flex justify-center items-center
@@ -221,19 +221,19 @@ const Header = ({ lenisRef }) => {
                     </button>
 
                     <div className="flex flex-col space-y-2 xl:space-y-5 2xl:space-y-7">
-                        <Link href="/" className="text-black hover:text-white cursor-pointer">
+                        <Link href="/team" className="text-black hover:text-white cursor-pointer">
                             <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 font-light tracking-wide [transform:scaleY(0.8)]">
-                                ARQEN
+                                Meet the founders
                             </h2>
                             <p className="text-[12px] xl:text-[14px] text-gray-500">
-                                Layout & Features
+                                Shehzam & Raza
                             </p>
                         </Link>
 
                         <Link href="/about" className="text-black hover:text-white cursor-pointer">
                             <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 font-light [transform:scaleY(0.8)]">About us</h2>
                             <p className="text-[12px] xl:text-[14px] text-gray-500">
-                                ELICA Yard
+                                Who we are
                             </p>
                         </Link>
 
@@ -251,10 +251,10 @@ const Header = ({ lenisRef }) => {
                             </p>
                         </Link>
 
-                        <Link href="/dealers" className="text-black hover:text-white cursor-pointer">
-                            <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 font-light [transform:scaleY(0.8)]">Dealers</h2>
+                        <Link href="/join-our-team" className="text-black hover:text-white cursor-pointer">
+                            <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 font-light [transform:scaleY(0.8)]">Join our team</h2>
                             <p className="text-[12px] xl:text-[14px] text-gray-500">
-                                Find a distributor near you
+                                Work with us
                             </p>
                         </Link>
 

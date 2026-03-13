@@ -103,7 +103,7 @@ export default function PeopleSection() {
                         className=" col-span-10 md:col-span-6 "
                     >
                         <h2 className="text-[36px] xl:text-[48px] font-opensans font-light tracking-tight [transform:scaleY(0.75)]">
-                            The people of <br /> ELICA Yard
+                            The people of <br /> Arqen
                         </h2>
                     </div>
 

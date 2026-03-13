@@ -8,16 +8,18 @@ const builder = imageUrlBuilder(client);
 const urlFor = (source) => builder.image(source);
 
 // ✅ Fetch only 3 posts + required fields
-const POSTS_QUERY = `*[
+const POSTS_QUERY = `
+*[
   _type == "post" &&
-  defined(slug.current)
-]| order(publishedAt desc)[0...4]{
+  defined(slug.current) &&
+  defined(publishedAt) &&
+  publishedAt <= now()
+] | order(publishedAt desc)[0...4]{
   _id,
   title,
   slug,
   publishedAt,
-  image,
-  body
+  image
 }`;
 
 const options = { next: { revalidate: 30 } };

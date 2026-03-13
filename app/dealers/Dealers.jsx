@@ -9,22 +9,22 @@ import {
 const distributors = [
     {
         title: "USA",
-        company: "OMAYA Yachts",
+        company: "arqen ",
         address: "15 Lockwood Drive, SC 29401 Charleston, USA",
         email: "info@multihullcompany.com",
         phone: "+1-215-508-2704",
     },
     {
         title: "HQ Bulgaria",
-        company: "OMAYA Yachts",
+        company: "arqen ",
         address:
             "18 Haralampi Dzhamdzhiev St., 7500 Silistra, Bulgaria",
-        email: "info@omaya-yachts.com",
+        email: "info@arqen-.com",
         phone: "+359 899 943 497",
     },
     {
         title: "Türkiye",
-        company: "OMAYA Yachts",
+        company: "arqen ",
         address:
             "352/29 Akyarlar mahallesi Atatürk caddesi, 48960 Bodrum / Muğla, Türkiye",
         email: "yenergayret@mirgi-yacht.com",
@@ -32,7 +32,7 @@ const distributors = [
     },
     {
         title: "Côte d'Azur",
-        company: "OMAYA Yachts",
+        company: "arqen ",
         address:
             "Air promenade, 470 Promenade des Anglais, 06200 Nice, France",
         email: "nikolay@yachtblissfr.com",
@@ -40,14 +40,14 @@ const distributors = [
     },
     {
         title: "Varna",
-        company: "OMAYA Yachts",
+        company: "arqen ",
         address: "Morska gara, 9000 Varna, Bulgaria",
         email: "info@lzyachting.com",
         phone: "+359 887 887 667",
     },
     {
         title: "Northern England",
-        company: "OMAYA Yachts",
+        company: "arqen ",
         address:
             "5 Lake Rd, Bowness-on-Windermere, Windermere LA23 3BP, UK",
         email: "info@horizonboatsales.co.uk",
@@ -55,7 +55,7 @@ const distributors = [
     },
     {
         title: "Côte d'Azur",
-        company: "OMAYA Yachts",
+        company: "arqen ",
         address:
             "Air promenade, 470 Promenade des Anglais, 06200 Nice, France",
         email: "nikolay@yachtblissfr.com",
@@ -63,14 +63,14 @@ const distributors = [
     },
     {
         title: "Varna",
-        company: "OMAYA Yachts",
+        company: "arqen ",
         address: "Morska gara, 9000 Varna, Bulgaria",
         email: "info@lzyachting.com",
         phone: "+359 887 887 667",
     },
     {
         title: "Northern England",
-        company: "OMAYA Yachts",
+        company: "arqen ",
         address:
             "5 Lake Rd, Bowness-on-Windermere, Windermere LA23 3BP, UK",
         email: "info@horizonboatsales.co.uk",

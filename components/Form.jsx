@@ -66,12 +66,37 @@ const Form = () => {
     };
 
     return (
-        <div className="section-contact w-full  bg-[#f3eee8] flex flex-col justify-center items-center pt-32 md:pt-20  px-5 2xl:px-6">
+        <div className="section-contact w-full bg-[#f3eee8] flex flex-col justify-center items-center pt-32 md:pt-32 px-5 2xl:px-6">
 
-            <h1 className="text-[36px] 2xl:text-[60px] font-opensans font-light tracking-tight text-black [transform:scaleY(0.75)] mb-10 2xl:mb-16 text-center">
-                Get in touch with us
-            </h1>
+            {/* PAGE TITLE */}
+            {/* <h1 className="text-[36px] 2xl:text-[60px] font-opensans font-light tracking-tight text-black [transform:scaleY(0.75)] mb-4 text-center">
+                Contact us now
+            </h1> */}
 
+            <h2 className="text-[28px] xl:text-[44px] font-opensans font-light tracking-tight text-black [transform:scaleY(0.8)] mb-4 text-center">
+                Connect with one of our universal agents
+            </h2>
+
+            <p className="max-w-3xl text-[16px] xl:text-[19px] text-gray-600 font-sourcesans3 text-center max-w-2xl mb-24">
+                Let us help you find the right property, whether off-plan or ready to move in.
+            </p>
+
+            {/* CONTACT INFO */}
+            {/* <div className="text-center font-sourcesans3 text-gray-700 mb-14 space-y-2">
+                <p className="text-[16px] 2xl:text-[18px]">
+                    +971 800 2773623
+                </p>
+
+                <p className="text-[16px] 2xl:text-[18px]">
+                    everybody@arqen.ae
+                </p>
+
+                <p className="text-[14px] 2xl:text-[16px] max-w-md mx-auto">
+                    Office 903 Onyx Tower 2, The Greens, Dubai, United Arab Emirate
+                </p>
+            </div> */}
+
+            {/* FORM */}
             <form
                 onSubmit={handleSubmit}
                 className="w-full lg:max-w-2xl 2xl:max-w-4xl font-sourcesans3"

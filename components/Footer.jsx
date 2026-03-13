@@ -75,12 +75,15 @@ const Footer = () => {
                         <h1 className="text-[22px] 2xl:text-[32px] font-opensans font-light tracking-tight text-black [transform:scaleY(0.75)]">
                             Contacts
                         </h1>
-                        <Link href="mailto:info@arqen.com" className='font-sourcesans3 text-[15px] 2xl:text-[18px]'>
-                            info@arqen.com
+                        <Link href="mailto:everybody@arqen.ae" className='font-sourcesans3 text-[15px] 2xl:text-[18px]'>
+                            everybody@arqen.ae
                         </Link>
-                        <Link href="tel:+1 (123) 456-7890" className='font-sourcesans3  text-[15px] 2xl:text-[18px]'>
-                            +1 (123) 456-7890
+                        <Link href="tel:+971 800 2773623" className='font-sourcesans3  text-[15px] 2xl:text-[18px]'>
+                            +971 800 2773623
                         </Link>
+                        <p className="font-sourcesans3 text-[15px] 2xl:text-[17px]">
+                            Office 903 Onyx Tower 2, The Greens, Dubai, United Arab Emirate
+                        </p>
                     </div>
                 </div>
             </div>

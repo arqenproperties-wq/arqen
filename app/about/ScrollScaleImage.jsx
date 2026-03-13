@@ -63,7 +63,7 @@ export default function ScrollRevealImage() {
                         font-opensans tracking-tight leading-12 xl:leading-20 2xl:leading-24
                         [transform:scaleY(0.75)]"
                     >
-                        Where OMAYA
+                        Where Arqen
                         <br />
                         takes shape
                     </h2>
@@ -148,7 +148,7 @@ export default function ScrollRevealImage() {
                                 className="absolute inset-0 w-full h-full bg-black block"
                             >
                                 {/* Replace with your actual video source */}
-                                <source src="/video/omaya.mp4" type="video/mp4" />
+                                <source src="/video/arqen.mp4" type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
                         </div>

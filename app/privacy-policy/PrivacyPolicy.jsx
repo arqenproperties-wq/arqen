@@ -15,9 +15,9 @@ const PrivacyPolicy = () => {
                     {/* Intro */}
                     <div>
                         <p className="leading-[24px] text-[16px] xl:text-[17px] 2xl:text-[18px]">
-                            This Privacy Policy describes how OMAYA Yachts OOD
+                            This Privacy Policy describes how Arqen OOD
                             collects, uses, stores and protects the personal data
-                            of visitors to the website omaya-yachts.com.
+                            of visitors to the website .com.
                         </p>
 
                         <p className="leading-[24px] text-[16px] xl:text-[17px] 2xl:text-[18px] mt-4">
@@ -33,11 +33,11 @@ const PrivacyPolicy = () => {
                         </h2>
 
                         <p className="leading-[24px] text-[16px] xl:text-[17px] 2xl:text-[18px]">
-                            Name: OMAYA Yachts OOD <br />
+                            Name: Arqen OOD <br />
                             Company ID/Registration number: 103196808 <br />
                             Correspondence address: Silistra, postal code 7500,
                             Boulevard/Street 18 Haralampi Dzhamdzhiev Street <br />
-                            Contact email: info@omaya-yachts.com <br />
+                            Contact email: info@arqen.com <br />
                             Phone: +3598 999 434 97
                         </p>
                     </div>

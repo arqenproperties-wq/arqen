@@ -19,7 +19,7 @@ const LegalNotice = () => {
                             Terms and conditions of use
                         </h2>
                         <p className="leading-[24px] text-[16px]  xl:text-[17px] 2xl:text-[18px]">
-                            The website is an online information service provided by OMAYA.
+                            The website is an online information service provided by arqen.
                             Its use is subject to the terms and conditions set forth herein.
                             If you do not agree to them, do not use the website and do not
                             download any materials from it.
@@ -31,7 +31,7 @@ const LegalNotice = () => {
                         <h2 className="text-[20px] xl:text-[24px] 2xl:text-[28px] font-light mb-2 xl:mb-4">Limited use</h2>
                         <p className="leading-[24px] text-[16px]  xl:text-[17px] 2xl:text-[18px]">
                             The contents of the website are subject to rights. All rights
-                            reserved. The contents of the website, omaya-yachts.com, cannot,
+                            reserved. The contents of the website, arqen-yachts.com, cannot,
                             in whole or in part, be copied, reproduced, transferred,
                             uploaded, published or distributed in any way without prior
                             written consent, except for personal use only. The website
@@ -53,7 +53,7 @@ const LegalNotice = () => {
                             their suitability for intended use. All information is provided
                             without any guarantee, implicit or explicit, including but not
                             limited to product quality or fitness for a particular purpose.
-                            OMAYA shall not be liable for any direct or indirect damages
+                            arqen shall not be liable for any direct or indirect damages
                             caused by use of this website. Information may contain technical
                             inaccuracies or typographical errors and may be updated without
                             notice.
@@ -64,27 +64,27 @@ const LegalNotice = () => {
                     <div>
                         <h2 className="text-[20px] xl:text-[24px] 2xl:text-[28px] font-light mb-2 xl:mb-4">Links</h2>
                         <p className="leading-[24px] text-[16px]  xl:text-[17px] 2xl:text-[18px]">
-                            OMAYA assumes no responsibility for material created or published
+                            arqen assumes no responsibility for material created or published
                             by third parties linked to this website. Users who visit linked
                             websites do so at their own risk and must take precautions
                             against viruses or destructive elements. Links do not imply that
-                            OMAYA sponsors or is affiliated with any entity.
+                            arqen sponsors or is affiliated with any entity.
                         </p>
                     </div>
 
-                    {/* Information from OMAYA */}
+                    {/* Information from arqen */}
                     <div>
                         <h2 className="text-[20px] xl:text-[24px] 2xl:text-[28px] font-light mb-2 xl:mb-4">
-                            Information from OMAYA
+                            Information from arqen
                         </h2>
                         <p className="leading-[24px]text-[16px]  xl:text-[17px] 2xl:text-[18px]">
                             Any material sent to the website via e-mail or web pages shall be
-                            deemed non-confidential. OMAYA has no obligation regarding such
+                            deemed non-confidential. arqen has no obligation regarding such
                             materials and may reproduce, use, disclose or distribute them
                             freely. Submitted materials may include ideas, concepts,
                             techniques or know-how for any purpose including development,
                             manufacturing or marketing of products. The sender guarantees the
-                            material is publishable and agrees to hold OMAYA harmless from
+                            material is publishable and agrees to hold arqen harmless from
                             third-party actions related to such materials.
                         </p>
                     </div>
@@ -97,7 +97,7 @@ const LegalNotice = () => {
                         <p className="leading-[24px] text-[16px]  xl:text-[17px] 2xl:text-[18px]">
                             These conditions are governed by Bulgarian law. The Court of
                             Silistra, Bulgaria, shall have exclusive jurisdiction over any
-                            disputes arising from these conditions. OMAYA reserves the right,
+                            disputes arising from these conditions. arqen reserves the right,
                             if necessary, to proceed before courts of other countries to
                             protect its interests and enforce its rights.
                         </p>
