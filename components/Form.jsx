@@ -84,7 +84,7 @@ const Form = () => {
             {/* CONTACT INFO */}
             {/* <div className="text-center font-sourcesans3 text-gray-700 mb-14 space-y-2">
                 <p className="text-[16px] 2xl:text-[18px]">
-                    +971 800 2773623
+                    +971 0548881804
                 </p>
 
                 <p className="text-[16px] 2xl:text-[18px]">

@@ -221,14 +221,14 @@ const Header2 = ({ lenisRef }) => {
                     </button>
 
                     <div className="flex flex-col space-y-2 xl:space-y-5 2xl:space-y-7">
-                        <Link href="/team" className="text-black hover:text-white cursor-pointer">
+                        {/* <Link href="/team" className="text-black hover:text-white cursor-pointer">
                             <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 font-light tracking-wide [transform:scaleY(0.8)]">
                                 Meet the founders
                             </h2>
                             <p className="text-[12px] xl:text-[14px] text-gray-500">
                                 Shehzam & Raza
                             </p>
-                        </Link>
+                        </Link> */}
 
                         <Link href="/about" className="text-black hover:text-white cursor-pointer">
                             <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 font-light [transform:scaleY(0.8)]">About us</h2>
