@@ -54,11 +54,11 @@ const Hero = ({ showScroll, images }) => {
                 <div className="overflow-hidden py-2">
                     <h1
                         ref={headingRef}
-                        className="md:text-center text-[40px] xl:text-[60px] 2xl:text-[66px] 
-  leading-12 2xl:leading-20 font-opensans font-light tracking-tight 
-  text-white [transform:scaleY(0.8)]"
+                        className="md:text-center text-[40px] xl:text-[54px] 2xl:text-[60px] 
+  leading-12 2xl:leading-20 font-centrathin     tracking-tight 
+  text-white"
                     >
-                        {"Experience Dubai,".split("").map((char, i) => (
+                        {"Experience Dubai, ".split("").map((char, i) => (
                             <span key={`line1-${i}`} className="inline-block">
                                 {char === " " ? "\u00A0" : char}
                             </span>
@@ -75,7 +75,7 @@ const Hero = ({ showScroll, images }) => {
                 </div>
             </div>
             <div ref={textRef} className="w-full h-screen absolute top-0 right-0 z-20 md:hidden flex items-end ">
-                <div className="flex items-center gap-1 absolute bottom-24 -right-10 rotate-90  text-[16px]  leading-8 font-opensans font-light tracking-[3px] text-white [transform:scaleY(0.8)]">
+                <div className="flex items-center gap-1 absolute bottom-24 -right-10 rotate-90  text-[16px]  leading-8 font-centrathin tracking-[3px] text-white ">
                     <div>
                         explore
                     </div>

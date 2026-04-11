@@ -73,11 +73,11 @@ const JoinTeamPage = () => {
         <div className="w-full bg-[#f3eee8] flex flex-col items-center pt-32 md:pt-32 px-5 xl:px-6">
 
             {/* PAGE HEADING */}
-            <h1 className="text-[28px] xl:text-[44px] font-opensans font-light tracking-tight text-black [transform:scaleY(0.8)] mb-4 text-center">
+            <h1 className="text-[28px] xl:text-[44px] font-centrathin font-bold tracking-tight text-[#38433b]  mb-4 text-center">
                 Why Arqen ?
             </h1>
 
-            <p className="max-w-3xl text-center text-[16px] xl:text-[19px] font-sourcesans3 text-gray-600 mb-16 leading-relaxed">
+            <p className="max-w-3xl text-center text-[16px] xl:text-[19px] font-centrathin font-bold text-[#38433b] mb-16 leading-relaxed">
                 At Arqen, we provide our advisors with structured training, marketing
                 support, and access to the tools needed to perform at a high level.
                 We also help our agents build their own personal brand. Our team
@@ -89,12 +89,12 @@ const JoinTeamPage = () => {
             {/* JOB VACANCY */}
             <div className="w-full lg:max-w-3xl xl:max-w-4xl bg-[#ffffff] rounded-[10px] px-8 py-8 xl:px-10 xl:py-8 shadow-sm mb-20">
 
-                <h2 className="font-opensans text-[26px] xl:text-[32px] font-light tracking-tight mb-2 [transform:scaleY(0.8)] ">
+                <h2 className="font-centrathin font-bold text-[#38433b] text-[26px] xl:text-[32px]  tracking-tight mb-2  ">
                     Videographer
                 </h2>
 
-                <p className="font-sourcesans3 text-gray-700 text-[15px] xl:text-[17px] leading-relaxed">
-                    <span className="font-semibold">Job description:</span> Full time,
+                <p className="font-centrathin font-bold text-[#38433b] text-[15px] xl:text-[17px] leading-relaxed">
+                    <span className="">Job description:</span> Full time,
                     onsite position responsible for recording and editing high
                     quality, engaging and informative videos of our property
                     listings, podcasts and agency content.
@@ -105,17 +105,17 @@ const JoinTeamPage = () => {
             {/* APPLICATION FORM */}
             <form
                 onSubmit={handleSubmit}
-                className="w-full lg:max-w-xl xl:max-w-4xl font-sourcesans3"
+                className="w-full lg:max-w-xl xl:max-w-4xl font-centrathin font-bold text-[#38433b]"
             >
 
-                <h3 className="font-opensans text-[26px] xl:text-[36px] font-light text-center mb-12 [transform:scaleY(0.8)] ">
+                <h3 className="ont-centrathin font-bold text-[#38433b] text-[26px] xl:text-[36px] text-center mb-12  ">
                     Apply for this position
                 </h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
 
                     <div>
-                        <label className="text-[15px] text-gray-600">Your Name*</label>
+                        <label className="text-[15px] text-[#38433b]">Your Name*</label>
                         <input
                             name="name"
                             value={formData.name}
@@ -127,7 +127,7 @@ const JoinTeamPage = () => {
                     </div>
 
                     <div>
-                        <label className="text-[15px] text-gray-600">E-mail address*</label>
+                        <label className="text-[15px] text-[#38433b]">E-mail address*</label>
                         <input
                             name="email"
                             value={formData.email}
@@ -139,7 +139,7 @@ const JoinTeamPage = () => {
                     </div>
 
                     <div>
-                        <label className="text-[15px] text-gray-600">
+                        <label className="text-[15px] text-[#38433b]">
                             Phone Number
                         </label>
                         <input
@@ -152,7 +152,7 @@ const JoinTeamPage = () => {
                     </div>
 
                     <div>
-                        <label className="text-[15px] text-gray-600">
+                        <label className="text-[15px] text-[#38433b]">
                             Upload CV*
                         </label>
                         <input
@@ -161,14 +161,14 @@ const JoinTeamPage = () => {
                             required
                             type="file"
                             accept=".pdf,.doc,.docx"
-                            className="w-full py-3 text-gray-600"
+                            className="w-full py-3 text-[#38433b]"
                         />
                     </div>
 
                 </div>
 
                 <div className="mb-12">
-                    <label className="text-[15px] text-gray-600">
+                    <label className="text-[15px] text-[#38433b]">
                         Message (optional)
                     </label>
                     <textarea
@@ -184,7 +184,7 @@ const JoinTeamPage = () => {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="px-8 py-3 rounded-[14px] font-sourcesans3 font-bold text-[15px] tracking-[2px] uppercase text-white bg-black"
+                        className="cursor-pointer px-8 py-3 rounded-[10px] font-sourcesans3 font-bold text-[15px] tracking-[2px] uppercase text-white bg-[#38433b] disabled:bg-gray-400 transition-colors duration-300"
                     >
                         {loading ? "Submitting..." : "Submit Application"}
                     </button>

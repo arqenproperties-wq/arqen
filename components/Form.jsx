@@ -69,15 +69,15 @@ const Form = () => {
         <div className="section-contact w-full bg-[#f3eee8] flex flex-col justify-center items-center pt-32 md:pt-32 px-5 2xl:px-6">
 
             {/* PAGE TITLE */}
-            {/* <h1 className="text-[36px] 2xl:text-[60px] font-opensans font-light tracking-tight text-black [transform:scaleY(0.75)] mb-4 text-center">
+            {/* <h1 className="text-[36px] 2xl:text-[60px] font-opensans font-light tracking-tight text-black  mb-4 text-center">
                 Contact us now
             </h1> */}
 
-            <h2 className="text-[28px] xl:text-[44px] font-opensans font-light tracking-tight text-black [transform:scaleY(0.8)] mb-4 text-center">
+            <h2 className="text-[28px] xl:text-[44px] font-centrabook tracking-tight text-[#38433b]  mb-4 text-center">
                 Connect with one of our universal agents
             </h2>
 
-            <p className="max-w-3xl text-[16px] xl:text-[19px] text-gray-600 font-sourcesans3 text-center max-w-2xl mb-24">
+            <p className="max-w-3xl text-[16px] xl:text-[19px] text-[#38433b] font-centrathin text-center max-w-2xl mb-24">
                 Let us help you find the right property, whether off-plan or ready to move in.
             </p>
 
@@ -99,13 +99,13 @@ const Form = () => {
             {/* FORM */}
             <form
                 onSubmit={handleSubmit}
-                className="w-full lg:max-w-2xl 2xl:max-w-4xl font-sourcesans3"
+                className="w-full lg:max-w-2xl 2xl:max-w-4xl font-centrathin"
             >
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 2xl:gap-12 mb-8 2xl:mb-12">
 
                     <div>
-                        <label className="text-[15px] text-gray-600">Your Name*</label>
+                        <label className="text-[15px] text-[#38433b]">Your Name*</label>
                         <input
                             name="name"
                             value={formData.name}
@@ -117,7 +117,7 @@ const Form = () => {
                     </div>
 
                     <div>
-                        <label className="text-[15px] text-gray-600">E-mail address*</label>
+                        <label className="text-[15px] text-[#38433b]">E-mail address*</label>
                         <input
                             name="email"
                             value={formData.email}
@@ -129,7 +129,7 @@ const Form = () => {
                     </div>
 
                     <div>
-                        <label className="text-[15px] text-gray-600">
+                        <label className="text-[15px] text-[#38433b]">
                             Phone Number (optional)
                         </label>
                         <input
@@ -144,7 +144,7 @@ const Form = () => {
                 </div>
 
                 <div className="mb-10">
-                    <label className="text-[15px] text-gray-600">Message*</label>
+                    <label className="text-[15px] text-[#38433b]">Message*</label>
                     <textarea
                         name="message"
                         value={formData.message}
@@ -161,9 +161,9 @@ const Form = () => {
                         checked={formData.agree}
                         onChange={handleChange}
                         type="checkbox"
-                        className="w-4 h-4 bg-black"
+                        className="w-4 h-4 bg-[#38433b]"
                     />
-                    <p className="text-[15px] text-gray-600">
+                    <p className="text-[15px] text-[#38433b]">
                         By submitting this form, you agree to our cookie and privacy statement.
                     </p>
                 </div>
@@ -172,7 +172,7 @@ const Form = () => {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="px-6 2xl:px-10 py-3 2xl:py-4 rounded-[14px] lg:rounded-[12px] font-sourcesans3 font-bold text-[15px] lg:text-[18px] tracking-[2px] lg:tracking-[3px] uppercase text-white bg-black"
+                        className="px-6 2xl:px-10 py-3 2xl:py-4 rounded-[14px] lg:rounded-[12px] font-centrabook text-[15px] lg:text-[18px] tracking-[1px] lg:tracking-[1px]  text-white bg-[#38433b]"
                     >
                         {loading ? "Sending..." : "Send Inquiry"}
                     </button>

@@ -95,7 +95,7 @@ export default function FAQSection() {
                     className="col-span-4 h-fit"
                 >
 
-                    <h2 className="text-black font-opensans [transform:scaleY(0.75)] text-[36px] md:text-[40px] xl:text-[46px] 2xl:text-[54px]  font-light leading-[44px] md:leading-[48px] xl:leading-[56px] 2xl:leading-[62px] ">
+                    <h2 className="text-[#38433b] font-centrathin font-bold  text-[36px] md:text-[40px] xl:text-[46px] 2xl:text-[54px]   leading-[44px] md:leading-[48px] xl:leading-[56px] 2xl:leading-[62px] ">
                         Frequently Asked<br />Questions
                     </h2>
 
@@ -110,11 +110,11 @@ export default function FAQSection() {
                     {faqs.map((item, i) => (
                         <div key={i} className="max-w-3xl">
 
-                            <h3 className="text-[28px] md:text-[28px] xl:text-[32px] 2xl:text-[32px] font-opensans font-light text-black [transform:scaleY(0.8)]">
+                            <h3 className="text-[28px] md:text-[28px] xl:text-[32px] 2xl:text-[32px] font-centrathin font-bold text-[#38433b] ">
                                 {item.q}
                             </h3>
 
-                            <p className="text-[16px] md:text-[16px] xl:text-[18px] 2xl:text-[18px] text-[#6d6d6d] font-sourcesans3">
+                            <p className="text-[16px] md:text-[16px] xl:text-[18px] 2xl:text-[18px] text-[#38433b] font-centrathin font-bold opacity-80 tracking-wide">
                                 {item.a}
                             </p>
 

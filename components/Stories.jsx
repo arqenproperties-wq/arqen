@@ -33,7 +33,7 @@ const Stories = async () => {
     return (
         <div className="section-blog w-full min-h-screen bg-[#f3eee8] flex flex-col justify-center items-center py-20  2xl:py-40">
 
-            <h1 className="text-[36px] 2xl:text-[60px] font-opensans font-light tracking-tight text-black [transform:scaleY(0.75)] mb-16 text-center">
+            <h1 className="text-[36px] 2xl:text-[60px] font-centrathin font-bold tracking-tight text-[#38433b]   mb-16 text-center">
                 Latest stories
             </h1>
             <div className='w-full lg:max-w-5xl xl:lg:max-w-6xl 2xl:max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-24 md:gap-8 lg:gap-20 xl:gap-28 2xl:gap-40 px-5 lg:px-12 xl:px-16 2xl:px-16'>
@@ -55,13 +55,13 @@ const Stories = async () => {
                                 )}
                             </div>
 
-                            <h2 className="text-[24px] font-opensans font-light text-black [transform:scaleY(0.75)]">
+                            <h2 className="text-[24px] font-centrathin font-bold text-[#38433b]  ">
                                 {post.title}
                             </h2>
 
                             <Link
                                 href={`/blog/${post.slug.current}`}
-                                className="text-black/70 cursor-pointer hover:underline">
+                                className="text-[#697b6c] /70 cursor-pointer hover:underline">
                                 Read more
                             </Link>
                         </div>

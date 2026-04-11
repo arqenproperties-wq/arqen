@@ -9,9 +9,67 @@ import StackingImages from "@/components/StackingImages";
 import Form from "@/components/Form";
 import Footer from "@/components/Footer";
 import IntroScreen from "@/components/IntroScreen";
+import CenterCarousel from "./InstagramCarousel";
 
 const START_FRAME = 20;
 const END_FRAME = 531;
+const posts = [
+    {
+        id: '1',
+        imageUrl: '/insta/1.jpg',
+        likes: 1243,
+        comments: 48,
+        caption: 'Spring has arrived and so has our new collection 🌿 ',
+        timestamp: '2 hours ago',
+        permalink: 'https://instagram.com/p/your-post-id',
+    },
+    {
+        id: '2',
+        imageUrl: '/insta/2.jpg',
+        likes: 1243,
+        comments: 48,
+        caption: 'Spring has arrived and so has our new collection 🌿',
+        timestamp: '2 hours ago',
+        permalink: 'https://instagram.com/p/your-post-id',
+    },
+    {
+        id: '3',
+        imageUrl: '/insta/1.jpg',
+        likes: 1243,
+        comments: 48,
+        caption: 'Spring has arrived and so has our new collection 🌿',
+        timestamp: '2 hours ago',
+        permalink: 'https://instagram.com/p/your-post-id',
+    },
+    {
+        id: '4',
+        imageUrl: '/insta/2.jpg',
+        likes: 1243,
+        comments: 48,
+        caption: 'Spring has arrived and so has our new collection 🌿',
+        timestamp: '2 hours ago',
+        permalink: 'https://instagram.com/p/your-post-id',
+    },
+    {
+        id: '5',
+        imageUrl: '/insta/1.jpg',
+        likes: 1243,
+        comments: 48,
+        caption: 'Spring has arrived and so has our new collection 🌿',
+        timestamp: '2 hours ago',
+        permalink: 'https://instagram.com/p/your-post-id',
+    },
+    {
+        id: '6',
+        imageUrl: '/insta/2.jpg',
+        likes: 1243,
+        comments: 48,
+        caption: 'Spring has arrived and so has our new collection 🌿',
+        timestamp: '2 hours ago',
+        permalink: 'https://instagram.com/p/your-post-id',
+    },
+];
+
 
 export default function HomeClient({ stories }) {
     const lenisRef = useRef(null);
@@ -44,7 +102,7 @@ export default function HomeClient({ stories }) {
     }, []);
 
     return (
-        <div>
+        <div className="bg-[#f3eee8]">
             {!showScroll && (
                 <IntroScreen
                     onExperienceEnd={() => setShowScroll(true)}
@@ -60,9 +118,12 @@ export default function HomeClient({ stories }) {
                     <StackingImages />
                     {stories}  {/* 👈 Stories is passed as a prop (a React node) */}
                     <Form />
+                    <CenterCarousel posts={posts} />
                     <Footer />
                 </>
             )}
         </div>
     );
 }
+
+// #475049

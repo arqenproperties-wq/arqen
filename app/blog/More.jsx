@@ -15,7 +15,7 @@ const MoreStories = ({ posts }) => {
 
     return (
         <div className="w-full md:max-w-lg lg:max-w-xl xl:max-w-[750px] 2xl:max-w-[832px]  mx-auto p-5 2xl:p-8 2xl:mt-16">
-            <h2 className="font-opensans font-light tracking-tight text-[30px] xl:text-[34px] 2xl:text-[38px] leading-10 2xl:leading-16 [transform:scaleY(0.8)]  text-black">
+            <h2 className="font-centrathin font-bold tracking-tight text-[30px] xl:text-[34px] 2xl:text-[38px] leading-10 2xl:leading-16   text-[#38433b]">
                 More Stories worth sharing
             </h2>
 
@@ -45,7 +45,7 @@ const MoreStories = ({ posts }) => {
                                 {/* Content */}
                                 <div className="w-full lg:w-1/2 flex flex-col justify-between">
                                     <div>
-                                        <h1 className="font-opensans font-light tracking-tight text-[26px] lg:text-[27px] xl:text-[30px] 2xl:text-[34px] leading-9 xl:leading-10  2xl:leading-11 [transform:scaleY(0.8)] relative bottom-5 text-black">
+                                        <h1 className="font-centrathin font-bold text-[#38433b] tracking-tight text-[26px] lg:text-[27px] xl:text-[30px] 2xl:text-[34px] leading-9 xl:leading-10  2xl:leading-11  relative bottom-5 ">
                                             {post.title}
                                         </h1>
 
@@ -62,12 +62,12 @@ const MoreStories = ({ posts }) => {
                                     <div className="flex justify-between">
                                         <Link
                                             href={`/blog/${post.slug.current}`}
-                                            className="font-sourcesans3 text-[14px] xl:text-[15px] 2xl:text-[16px] text-[#313131]"
+                                            className="font-centrathin text-[14px] xl:text-[15px] 2xl:text-[16px] text-[#38433b]"
                                         >
                                             Read more
                                         </Link>
 
-                                        <p className="font-sourcesans3 text-[14px] xl:text-[15px] 2xl:text-[16px] text-gray-500">
+                                        <p className="font-centrathin text-[14px] xl:text-[15px] 2xl:text-[16px] text-[#4c5950]">
                                             {new Date(post.publishedAt).toLocaleDateString(
                                                 "en-GB",
                                                 {

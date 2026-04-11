@@ -6,11 +6,11 @@ const PrivacyPolicy = () => {
             <div className="w-full md:max-w-[550px] lg:max-w-[700px] xl:max-w-5xl 2xl:max-w-7xl mx-auto xl:px-8">
 
                 {/* PAGE TITLE */}
-                <h1 className="text-[36px] md:text-[40px] xl:text-[60px] 2xl:text-[72px] font-opensans font-light mb-6 xl:mb-10 text-black [transform:scaleY(0.75)]">
+                <h1 className="text-[36px] md:text-[40px] xl:text-[60px] 2xl:text-[72px] font-centrathin font-bold mb-6 xl:mb-10 text-[#38433b] ">
                     Privacy policy
                 </h1>
 
-                <div className="space-y-8 text-[#313131] font-sourcesans3">
+                <div className="space-y-8 text-[#38433b] font-centrathin font-bold">
 
                     {/* Intro */}
                     <div>
@@ -26,7 +26,7 @@ const PrivacyPolicy = () => {
 
                     {/* 1 */}
                     <div>
-                        <h2 className="text-[16px] xl:text-[17px] 2xl:text-[18px] text-black font-medium">
+                        <h2 className="text-[16px] xl:text-[17px] 2xl:text-[18px] text-[#161d17] ">
                             1. Information We Collect
                         </h2>
 
@@ -50,7 +50,7 @@ const PrivacyPolicy = () => {
 
                     {/* 2 */}
                     <div>
-                        <h2 className="text-[16px] xl:text-[17px] 2xl:text-[18px] text-black font-medium">
+                        <h2 className="text-[16px] xl:text-[17px] 2xl:text-[18px] text-[#161d17]  ">
                             2. How We Use Information
                         </h2>
                         <h2 className="text-[16px] xl:text-[17px] 2xl:text-[18px]  mt-2">
@@ -66,7 +66,7 @@ const PrivacyPolicy = () => {
 
                     {/* 3 */}
                     <div>
-                        <h2 className="text-[16px] xl:text-[17px] 2xl:text-[18px] text-black font-medium">
+                        <h2 className="text-[16px] xl:text-[17px] 2xl:text-[18px] text-[#161d17]  ">
                             3. Your Rights
                         </h2>
 
@@ -82,7 +82,7 @@ const PrivacyPolicy = () => {
 
                     {/* 4 */}
                     <div>
-                        <h2 className="text-[16px] xl:text-[17px] 2xl:text-[18px] text-black font-medium">
+                        <h2 className="text-[16px] xl:text-[17px] 2xl:text-[18px] text-[#161d17]  ">
                             4. Sharing of Information
                         </h2>
 
@@ -102,7 +102,7 @@ const PrivacyPolicy = () => {
 
                     {/* 5 */}
                     <div>
-                        <h2 className="text-[16px] xl:text-[17px] 2xl:text-[18px] text-black font-medium">
+                        <h2 className="text-[16px] xl:text-[17px] 2xl:text-[18px] text-[#161d17]  ">
                             5. Retention of Information
                         </h2>
 
@@ -114,7 +114,7 @@ const PrivacyPolicy = () => {
 
                     {/* 6 */}
                     <div>
-                        <h2 className="text-[16px] xl:text-[17px] 2xl:text-[18px] text-black font-medium">
+                        <h2 className="text-[16px] xl:text-[17px] 2xl:text-[18px] text-[#161d17]  ">
                             6. Cookies and Analytics
                         </h2>
 
@@ -130,7 +130,7 @@ const PrivacyPolicy = () => {
 
                     {/* 7 */}
                     <div>
-                        <h2 className="text-[16px] xl:text-[17px] 2xl:text-[18px] text-black font-medium">
+                        <h2 className="text-[16px] xl:text-[17px] 2xl:text-[18px] text-[#161d17]  ">
                             7. Security
                         </h2>
 
@@ -142,7 +142,7 @@ const PrivacyPolicy = () => {
 
                     {/* 8 */}
                     <div>
-                        <h2 className="text-[16px] xl:text-[17px] 2xl:text-[18px] text-black font-medium">
+                        <h2 className="text-[16px] xl:text-[17px] 2xl:text-[18px] text-[#161d17]  ">
                             8. External Links
                         </h2>
 
@@ -154,7 +154,7 @@ const PrivacyPolicy = () => {
 
                     {/* 9 */}
                     <div>
-                        <h2 className="text-[16px] xl:text-[17px] 2xl:text-[18px] text-black font-medium">
+                        <h2 className="text-[16px] xl:text-[17px] 2xl:text-[18px] text-[#161d17]  ">
                             9. Changes to This Policy
                         </h2>
 
@@ -165,7 +165,7 @@ const PrivacyPolicy = () => {
 
                     {/* 10 */}
                     <div>
-                        <h2 className="text-[16px] xl:text-[17px] 2xl:text-[18px] text-black font-medium">
+                        <h2 className="text-[16px] xl:text-[17px] 2xl:text-[18px] text-[#161d17]  ">
                             10. Contact Us
                         </h2>
 

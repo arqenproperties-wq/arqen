@@ -138,7 +138,7 @@ const Header = ({ lenisRef }) => {
         <>
             <div
                 ref={headerRef}
-                className="w-full flex justify-between items-center fixed top-0 left-0 xl:px-6 z-50"
+                className="w-full flex justify-between items-center fixed top-0 left-0 xl:px-6 py-2 z-50"
             >
                 <Link href="/" className="cursor-pointer">
                     <Image
@@ -147,7 +147,7 @@ const Header = ({ lenisRef }) => {
                         alt="Logo"
                         width={500}
                         height={500}
-                        className="w-[125px] xl:w-[175px] cursor-pointer"
+                        className="w-[115px] xl:w-[175px] cursor-pointer"
                     />
                 </Link>
                 <div className='w-fit flex justify-between items-center gap-4 lg:gap-6 xl:gap-6 mr-4'>
@@ -178,8 +178,8 @@ const Header = ({ lenisRef }) => {
                             shadow-[0_0_2.846px_#0000001a,0_1.423px_11.386px_#0000001f,inset_4.27px_4.27px_.712px_-4.27px_#ffffffbf,inset_-4.27px_-4.27px_.712px_-4.27px_#fffc,inset_1.423px_1.423px_1.423px_-.712px_#ffffffbf,inset_-1.423px_-1.423px_1.423px_-.712px_#ffffffbf,inset_0_0_1.423px_1.423px_#ffffff26,inset_0_0_1.423px_1.423px_#999,inset_0_0_22.771px_#f2f2f2]
                         "
                     >
-                        <h1 className="text-white text-center font-sourcesans3 font-semibold text-[12px] lg:text-[16px]  xl:text-[18px]  tracking-wider uppercase">
-                            ARQEN
+                        <h1 className="text-white text-center font-centrathin  text-[12px] lg:text-[16px]  xl:text-[18px]  tracking-wider ">
+                            Arqen
                         </h1>
                         <Image
                             src="/up-right.svg"
@@ -197,7 +197,7 @@ const Header = ({ lenisRef }) => {
                             height={500}
                             className="w-[20px] xl:w-[25px] h-auto object-contain mt-1 xl:mt-2  rotate-90"
                         />
-                        <h1 className="text-white text-center font-sourcesans3 font-semibold text-[12px] lg:text-[16px]  xl:text-[18px] tracking-wider uppercase">
+                        <h1 className="text-white text-center font-centrathin  text-[12px] lg:text-[16px]  xl:text-[18px] tracking-wider ">
                             More
                         </h1>
                     </div>
@@ -220,9 +220,9 @@ const Header = ({ lenisRef }) => {
                         ✕
                     </button>
 
-                    <div className="flex flex-col space-y-2 xl:space-y-5 2xl:space-y-7">
-                        {/* <Link href="/team" className="text-black hover:text-white cursor-pointer">
-                            <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 font-light tracking-wide [transform:scaleY(0.8)]">
+                    <div className="flex flex-col space-y-2 xl:space-y-5 2xl:space-y-7 font-centrathin font-bold">
+                        {/* <Link href="/team" className="text-[#161d17] hover:text-white cursor-pointer">
+                            <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 font-light tracking-wide ">
                                 Meet the founders
                             </h2>
                             <p className="text-[12px] xl:text-[14px] text-gray-500">
@@ -230,30 +230,30 @@ const Header = ({ lenisRef }) => {
                             </p>
                         </Link> */}
 
-                        <Link href="/about" className="text-black hover:text-white cursor-pointer">
-                            <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 font-light [transform:scaleY(0.8)]">About us</h2>
-                            <p className="text-[12px] xl:text-[14px] text-gray-500">
+                        <Link href="/about" className="text-[#4c5950] hover:text-white cursor-pointer">
+                            <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9  ">About us</h2>
+                            <p className="text-[12px] xl:text-[14px] text-gray-500 font-centrathin">
                                 Who we are
                             </p>
                         </Link>
 
-                        <Link href="/blog" className="text-black hover:text-white cursor-pointer">
-                            <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 font-light [transform:scaleY(0.8)]">Blog</h2>
-                            <p className="text-[12px] xl:text-[14px] text-gray-500">
+                        <Link href="/blog" className="text-[#4c5950] hover:text-white cursor-pointer">
+                            <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9  ">Blog</h2>
+                            <p className="text-[12px] xl:text-[14px] text-gray-500 font-centrathin">
                                 Stories & Insights
                             </p>
                         </Link>
 
-                        <Link href="/contact" className="text-black hover:text-white cursor-pointer">
-                            <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 font-light [transform:scaleY(0.8)]">Contact</h2>
-                            <p className="text-[12px] xl:text-[14px] text-gray-500">
+                        <Link href="/contact" className="text-[#4c5950] hover:text-white cursor-pointer">
+                            <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9  ">Contact</h2>
+                            <p className="text-[12px] xl:text-[14px] text-gray-500 font-centrathin">
                                 Get in touch with us
                             </p>
                         </Link>
 
-                        <Link href="/join-our-team" className="text-black hover:text-white cursor-pointer">
-                            <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 font-light [transform:scaleY(0.8)]">Join our team</h2>
-                            <p className="text-[12px] xl:text-[14px] text-gray-500">
+                        <Link href="/join-our-team" className="text-[#4c5950] hover:text-white cursor-pointer">
+                            <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9  ">Join our team</h2>
+                            <p className="text-[12px] xl:text-[14px] text-gray-500 font-centrathin">
                                 Work with us
                             </p>
                         </Link>
@@ -261,10 +261,10 @@ const Header = ({ lenisRef }) => {
                         <hr className="w-[70%] my-4 border border-[#00000020]" />
 
                         <div>
-                            <h2 className="text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 font-light [transform:scaleY(0.8)]">
+                            <h2 className="text-[#4c5950] text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 ">
                                 Brochure
                             </h2>
-                            <p className="text-[12px] xl:text-[14px] text-gray-500">
+                            <p className="text-[12px] xl:text-[14px] text-gray-500 font-centrathin">
                                 Download Arqen details
                             </p>
                         </div>

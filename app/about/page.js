@@ -17,9 +17,9 @@ const page = () => {
             <ScrollScaleImage />
             <About />
             <div className='w-full h-screen  flex flex-col justify-center items-center text-center bg-[#f3eee8] relative'>
-                <p className='text-[22px] md:text-[40px] xl:text-[54px]  font-opensans font-light tracking-tight [transform:scaleY(0.75)] text-black'>
+                <p className='text-[22px] md:text-[40px] xl:text-[54px]  font-centrathin tracking-tight  text-[#38433b]'>
                     A boutique real estate agency redefining Dubai living</p>
-                <h1 className='text-[24px] md:text-[44px] lg:text-[52px] xl:text-[62px] font-opensans font-bold  text-black'>LIVE AHEAD. LIVE ARQEN.</h1>
+                <h1 className='text-[24px] md:text-[44px] lg:text-[52px] xl:text-[62px] font-centrabook font-bold  text-[#38433b]'>LIVE AHEAD. LIVE ARQEN.</h1>
             </div>
             <CardStack2 />
             <PeopleSection />

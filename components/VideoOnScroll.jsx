@@ -126,11 +126,11 @@ export const VideoOnScroll = ({ images, startFrame = 1, endFrame = 531 }) => {
 
             <div
                 ref={textRef}
-                className="text-white text-center hidden md:flex font-light flex-col justify-center items-center font-opensans text-[20px] xl:text-[20px] absolute bottom-6 left-1/2 -translate-x-1/2 [transform:scaleY(0.8)]"
+                className="text-white text-center hidden md:flex  flex-col justify-center items-center font-centrathin text-[20px] xl:text-[20px] absolute bottom-6 left-1/2 -translate-x-1/2 "
             >
-                <p className="relative -left-4">scroll</p>
-                <p className="relative left-0">to</p>
-                <p className="relative left-6">explore</p>
+                <p className="relative -left-4 leading-6">scroll</p>
+                <p className="relative left-0 leading-6">to</p>
+                <p className="relative left-6 leading-6">explore</p>
             </div>
 
 
@@ -139,7 +139,7 @@ export const VideoOnScroll = ({ images, startFrame = 1, endFrame = 531 }) => {
                     key={panel.id}
                     ref={(el) => (panelRefs.current[panel.id] = el)}
                     style={{ opacity: 0 }}
-                    className={` font-opensans
+                    className={` font-centrathin
             absolute bottom-14  pointer-events-none
             ${panel.side === "left" ? "left-10 md:left-16 text-left" : "right-10 md:right-16 text-right"}
           `}
@@ -152,13 +152,13 @@ export const VideoOnScroll = ({ images, startFrame = 1, endFrame = 531 }) => {
             `}
                     />
                     <h2
-                        className="text-white font-opensans font-light tracking-tight [transform:scaleY(0.8)]  text-[40px] xl:text-[60px] 2xl:text-[66px] leading-12 2xl:leading-20"
+                        className="text-white font-centrathin tracking-tight   text-[40px] xl:text-[60px] 2xl:text-[66px] leading-12 2xl:leading-20"
 
                     >
                         {panel.headline}
                     </h2>
                     <p
-                        className="text-white font-opensans font-light tracking-tight [transform:scaleY(0.8)]   text-[18px] xl:text-[22px] 2xl:text-[24px] "
+                        className="text-white font-centrathin   text-[18px] xl:text-[22px] 2xl:text-[24px] mt-2"
 
                     >
                         {panel.body}

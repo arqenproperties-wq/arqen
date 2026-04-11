@@ -19,7 +19,7 @@ const MeetTeamPage = () => {
         <div className="w-full bg-[#f3eee8] flex flex-col items-center pt-32 md:pt-32 px-5 xl:px-6">
 
             {/* PAGE HEADING */}
-            <h1 className="text-[28px] xl:text-[44px] font-opensans font-light tracking-tight text-black [transform:scaleY(0.8)] mb-4 text-center">
+            <h1 className="text-[28px] xl:text-[44px] font-opensans font-light tracking-tight text-black  mb-4 text-center">
                 Meet the Team
             </h1>
 

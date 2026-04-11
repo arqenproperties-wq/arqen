@@ -19,7 +19,7 @@ const CARDS = [
     },
     {
         id: 2,
-        bg: "bg-[#1d3e57]",
+        bg: "bg-[#38433b]",
         bgImage: "",
         zIndex: "z-[4]",
         headline: <>Investment<br />Intelligence.</>,
@@ -32,7 +32,7 @@ const CARDS = [
     },
     {
         id: 3,
-        bg: "bg-[#02737c]",
+        bg: "bg-[#792f13]",
         bgImage: "",
         zIndex: "z-[3]",
         headline: <>Live Ahead.<br />Live Arqen.</>,
@@ -128,10 +128,11 @@ export default function CardStack2() {
                             backgroundPosition: "center",
                         } : {}}
                     >
-                        <div className="w-full h-full  bg-[#00000050] absolute top-0 left-0"></div>
-                        <div className="w-full flex flex-col justify-between overflow-hidden">
-                            <div className="h-fit">
-                                <p className='text-[32px] md:text-[40px] xl:text-[54px] leading-10 md:leading-12 xl:leading-16 font-opensans font-light tracking-tight [transform:scaleY(0.75)] text-white'>
+                        {card.id === 1 && (
+                            <div className="w-full h-full bg-[#00000040] absolute top-0 left-0"></div>
+                        )}                        <div className="w-full flex flex-col justify-between overflow-hidden">
+                            <div className="h-fit relative z-10">
+                                <p className='text-[32px] md:text-[40px] xl:text-[54px] leading-10 md:leading-12 xl:leading-16 font-centrathin tracking-tight  text-white'>
                                     {card.headline}
                                 </p>
                             </div>
@@ -152,8 +153,8 @@ export default function CardStack2() {
                                 </div>
                             </div>
 
-                            <div className="relative w-full h-fit xl:h-[35%] flex flex-col-reverse xl:flex-row gap-10">
-                                <h1 className="w-full xl:w-[40%] font-light font-sourcesans3 text-[16px] md:text-[18px] xl:text-[24px]">
+                            <div className="relative w-full h-fit xl:h-[35%] flex flex-col-reverse xl:flex-row gap-10 z-10">
+                                <h1 className="w-full xl:w-[40%] font-centrathin text-[16px] md:text-[18px] xl:text-[24px]">
                                     {card.body}
                                 </h1>
                                 <div className="hidden md:flex w-full gap-4 overflow-hidden">

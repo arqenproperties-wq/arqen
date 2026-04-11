@@ -59,9 +59,9 @@ export default function ScrollRevealImage() {
                 <div className="absolute inset-0 z-10 flex flex-col gap-4 items-center justify-center pointer-events-none">
                     <h2
                         ref={titleRef}
-                        className="text-[44px] xl:text-[72px] 2xl:text-[80px] font-light text-center text-[#1a1a1a]
-                        font-opensans tracking-tight leading-12 xl:leading-20 2xl:leading-24
-                        [transform:scaleY(0.75)]"
+                        className="text-[44px] xl:text-[68px] 2xl:text-[76px]  text-center text-[#232a23]
+                        font-centrathin font-bold tracking-tight leading-12 xl:leading-20 2xl:leading-24
+                        "
                     >
                         Where Arqen
                         <br />
@@ -87,8 +87,8 @@ export default function ScrollRevealImage() {
                             height={500}
                             className="w-[15px] h-auto object-contain ml-2"
                         />
-                        <h1 className="text-white text-center font-sourcesans3 font-semibold text-[14px] lg:text-[16px] xl:text-[18px] 2xl:text-[20px] tracking-wider uppercase">
-                            PLAY VIDEO
+                        <h1 className="text-white text-center font-centrathin text-[14px] lg:text-[16px] xl:text-[18px] 2xl:text-[20px] tracking-wider ">
+                            Play Video
                         </h1>
                     </div>
                 </div>

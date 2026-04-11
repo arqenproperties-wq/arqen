@@ -197,10 +197,10 @@ const IntroScreen = ({ onExperienceEnd }) => {
                 className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-white transition-opacity duration-700"
                 style={{ opacity: showLoader ? 1 : 0, pointerEvents: showLoader ? 'auto' : 'none' }}
             >
-                <div className="relative w-[225px] xl:w-[250px] h-auto mb-46">
+                <div className="relative w-[100px] xl:w-[125px] h-auto mb-46">
 
                     <Image
-                        src="/3.png"
+                        src="/newlogo2.png"
                         alt="Logo"
                         width={500}
                         height={500}
@@ -214,7 +214,7 @@ const IntroScreen = ({ onExperienceEnd }) => {
                         }}
                     >
                         <Image
-                            src="/3.png"
+                            src="/newlogo2.png"
                             alt="Logo Fill"
                             width={500}
                             height={500}
@@ -253,36 +253,36 @@ const IntroScreen = ({ onExperienceEnd }) => {
                             className="w-[225px] xl:w-[250px] h-auto object-contain "
                         />
                     </div>
-                    <h1 className="text-center text-[52px] xl:text-[64px] 2xl:text-[72px] leading-16 2xl:leading-20 font-opensans font-light tracking-tight text-white [transform:scaleY(0.75)]">
+                    <h1 className="text-center  opacity-80  text-[50px] xl:text-[58px] 2xl:text-[66px] leading-16 2xl:leading-20 font-centrathin font-bold   text-white ">
                         Welcome to arqen
                     </h1>
                     <div
                         ref={enterBtnRef}
                         onClick={() => handleEnter(true)}
                         className="
-                            px-[20px] py-[12px] md:px-[28px] xl:px-[26px] xl:py-[14px]
+                            px-[20px] py-[12px] md:px-[28px] xl:px-[30px] xl:py-[12px]
                             bg-[#b4b4b450]
-                            rounded-[16px] xl:rounded-[20px]
+                            rounded-[16px] xl:rounded-[16px]
                             flex justify-center items-center
                             border border-white
                             mt-6 xl:mt-10 cursor-pointer
-                            z-10 text-white hover:text-black
+                            z-10 text-white hover:text-[#161d17] 
                             hover:bg-white
                             backdrop-blur-[10px]
                             hover:shadow-none
                             shadow-[0_0_2.846px_#0000001a,0_1.423px_11.386px_#0000001f,inset_4.27px_4.27px_.712px_-4.27px_#ffffffbf,inset_-4.27px_-4.27px_.712px_-4.27px_#fffc,inset_1.423px_1.423px_1.423px_-.712px_#ffffffbf,inset_-1.423px_-1.423px_1.423px_-.712px_#ffffffbf,inset_0_0_1.423px_1.423px_#ffffff26,inset_0_0_1.423px_1.423px_#999,inset_0_0_22.771px_#f2f2f2]
                         "
                     >
-                        <h1 className=" text-center font-sourcesans3 font-semibold text-[18px] xl:text-[20px] 2xl:text-[22px] tracking-wider uppercase">
-                            Enter Experience
+                        <h1 className=" text-center font-centrathin text-[18px] xl:text-[20px] 2xl:text-[22px] tracking-wider ">
+                            Enter experience
                         </h1>
                     </div>
                     <h1
                         ref={withoutSoundRef}
                         onClick={() => handleEnter(false)}
-                        className="z-10 absolute left-1/2 -translate-x-1/2 bottom-16 text-white text-center font-sourcesans3 font-semibold text-[15px] xl:text-[18px] tracking-wider uppercase underline decoration-2 underline-offset-2 decoration-[#ffffff80] cursor-pointer"
+                        className="z-10 absolute left-1/2 -translate-x-1/2 bottom-16 text-white text-center font-centrathin text-[16px] xl:text-[20px] tracking-wider  underline decoration-2 underline-offset-2 decoration-[#ffffff80] cursor-pointer"
                     >
-                        Enter Without Sound
+                        Enter without sound
                     </h1>
                 </div>
             </div>
@@ -304,12 +304,12 @@ const IntroScreen = ({ onExperienceEnd }) => {
                         absolute bottom-4 right-4 md:bottom-16 md:right-16  
                         gap-2
                         underline decoration-2 underline-offset-2 xl:underline-offset-6 decoration-[#ffffff]
-                        text-white font-sourcesans3 font-medium text-[14px] xl:text-[20px] tracking-wider uppercase
+                        text-white font-centrathin text-[14px] xl:text-[20px] tracking-wider 
                         cursor-pointer
                     "
                     style={{ pointerEvents: entered ? 'auto' : 'none' }}
                 >
-                    Skip Intro
+                    Skip intro
                 </button>
             </div>
         </div>
@@ -349,7 +349,7 @@ const ReelDigit = ({ value, delay = 0 }) => {
                         style={{
                             height,
                         }}
-                        className='font-opensans tracking-tighter text-[40px] lg:text-[60px] font-light text-black [transform:scaleY(0.75)]'
+                        className='font-centrathin font-bold  text-[38px] lg:text-[56px]  text-[#38433b] '
                     >
                         {n}
                     </div>
@@ -367,7 +367,7 @@ const SlotLoader = ({ progress }) => {
             {digits.map((d, i) => (
                 <ReelDigit key={i} value={d} delay={i * 140} />
             ))}
-            <span className="text-black text-[14px] lg:text-[16px] ml-2 mb-8">%</span>
+            <span className="text-[#38433b] text-[14px] lg:text-[16px] ml-2 mb-8">%</span>
         </div>
     )
 }

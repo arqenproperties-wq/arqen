@@ -70,7 +70,7 @@ export default function About() {
 
                 {/* Text block — top right aligned (offset left via padding) */}
                 <div className="xl:max-w-[100%] xl:pl-[20%] 2xl:pl-[25%] xl:pr-20 2xl:pr-40">
-                    <h2 className="text-black font-opensans [transform:scaleY(0.75)] text-[32px] md:text-[38px] xl:text-[44px] 2xl:text-[50px] font-light leading-[44px] md:leading-[48px] xl:leading-[56px] 2xl:leading-[62px]">
+                    <h2 className="text-[#38433b] font-centrathin font-bold  text-[30px] md:text-[36px] xl:text-[42px] 2xl:text-[48px]  leading-[44px] md:leading-[48px] xl:leading-[56px] 2xl:leading-[62px]">
 
                         <span className="block mb-10 xl:mb-14">
                             Arqen was built on more than 20 years of combined experience in Dubai real estate.

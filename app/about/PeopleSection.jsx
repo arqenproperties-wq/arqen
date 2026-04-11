@@ -102,7 +102,7 @@ export default function PeopleSection() {
                         ref={textRef}
                         className=" col-span-10 md:col-span-6 "
                     >
-                        <h2 className="text-[36px] xl:text-[48px] font-opensans font-light tracking-tight [transform:scaleY(0.75)]">
+                        <h2 className="text-[36px] xl:text-[48px] font-centrathin font-bold tracking-tight text-[#38433b]">
                             The people of <br /> Arqen
                         </h2>
                     </div>

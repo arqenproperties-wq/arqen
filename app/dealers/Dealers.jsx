@@ -84,7 +84,7 @@ export default function Dealers() {
             <div className="w-full lg:max-w-[700px] xl:max-w-5xl 2xl:max-w-7xl mx-auto xl:px-8">
 
                 {/* Heading */}
-                <h2 className="text-[36px] md:text-[40px] xl:text-[60px] 2xl:text-[76px] font-opensans font-light mb-6 xl:mb-10 2xl:mb-16 text-black [transform:scaleY(0.75)]">
+                <h2 className="text-[36px] md:text-[40px] xl:text-[60px] 2xl:text-[76px] font-centrathin font-bold mb-6 xl:mb-10 2xl:mb-16 text-[#38433b]">
                     Find a distributor
                 </h2>
 
@@ -95,21 +95,21 @@ export default function Dealers() {
                             key={index}
                             className="border-b border-neutral-300 pb-10"
                         >
-                            <div className="grid md:grid-cols-[0.8fr_1.2fr] gap-3 text-[#313131]">
+                            <div className="grid md:grid-cols-[0.8fr_1.2fr] gap-3 text-[#38433b]">
 
                                 {/* Left */}
                                 <div>
-                                    <p className="text-[16px] xl:text-[18px] 2xl:text-[22px] font-light font-opensans tracking-wide [transform:scaleY(0.75)]">
+                                    <p className="text-[16px] xl:text-[18px] 2xl:text-[22px] font-centrathin font-bold tracking-wide ">
                                         {item.company}
                                     </p>
 
-                                    <h3 className="text-[26px] xl:text-[30px] 2xl:text-[36px] font-light text-black font-opensans tracking-wide [transform:scaleY(0.75)]">
+                                    <h3 className="text-[26px] xl:text-[30px] 2xl:text-[36px] font-centrathin font-bold tracking-wide ">
                                         {item.title}
                                     </h3>
                                 </div>
 
                                 {/* Right */}
-                                <div className="space-y-2 font-sourcesans3 text-[14px] xl:text-[16px] 2xl:text-[18px] ">
+                                <div className="space-y-2 font-centrathin font-bold text-[14px] xl:text-[16px] 2xl:text-[18px] ">
 
                                     <div className="flex items-start gap-3">
                                         <MapPin size={16} className="mt-1" />

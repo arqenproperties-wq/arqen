@@ -6,7 +6,7 @@ const LegalNotice = () => {
             <div className="w-full md:max-w-[550px] lg:max-w-[700px] xl:max-w-5xl 2xl:max-w-7xl mx-auto  xl:px-8">
 
                 {/* PAGE TITLE */}
-                <h1 className="text-[36px] md:text-[40px] xl:text-[60px] 2xl:text-[72px] font-opensans font-light mb-6 xl:mb-10  text-black [transform:scaleY(0.75)]">
+                <h1 className="text-[36px] md:text-[40px] xl:text-[60px] 2xl:text-[72px] font-opensans font-light mb-6 xl:mb-10  text-black ">
                     Legal notice
                 </h1>
 

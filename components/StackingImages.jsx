@@ -122,10 +122,10 @@ export default function StackingImages() {
         >
             <div ref={pinnedRef} className="relative h-screen w-full flex items-center justify-center overflow-hidden">
                 <div ref={textRef} className="absolute text-center pointer-events-none select-none z-0">
-                    <p className="text-[48px] xl:text-[84px] leading-16  font-opensans font-light [transform:scaleY(0.75)] text-black opacity-100">
+                    <p className="text-[48px] xl:text-[84px] leading-16  font-centrabook text-[#38433b] opacity-100">
                         Arqen
                     </p>
-                    <p className="text-[28px] xl:text-[32px]  leading-6 xl:leading-16  font-opensans font-light [transform:scaleY(0.75)] italic text-[#2c2620] opacity-80">
+                    <p className="text-[28px] xl:text-[32px]  leading-6 xl:leading-16 font-centrathin  italic text-[#4c5950] opacity-80">
                         A place designed for the life you envision
                     </p>
                 </div>

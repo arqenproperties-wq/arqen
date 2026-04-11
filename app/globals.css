@@ -1,18 +1,35 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-opensans: 'OpenSans', sans-serif;
-  --font-sourcesans3: 'SourceSans3', sans-serif;
+  --font-centrabook: 'CentraNo2-Book', sans-serif;
+  --font-centrathin: 'CentraNo2-Thin', sans-serif;
+  --font-glacialbold: 'GlacialIndifference-Bold', sans-serif;
+  --font-glacialregular: 'GlacialIndifference-Regular', sans-serif;
 }
 
 @font-face {
-  font-family: 'OpenSans';
-  src: url('/OpenSans.ttf') format('truetype');
+  font-family: 'CentraNo2-Book';
+  src: url('/fonts/CentraNo2-Book.otf') format('opentype');
+  font-weight: 400;
+
+}
+
+
+@font-face {
+  font-family: 'CentraNo2-Thin';
+  src: url('/fonts/CentraNo2-Thin.otf') format('opentype');
+  font-weight: 100;
+
 }
 
 @font-face {
-  font-family: 'SourceSans3';
-  src: url('/SourceSans3.ttf') format('truetype');
+  font-family: 'GlacialIndifference-Bold';
+  src: url('/fonts/GlacialIndifference-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'GlacialIndifference-Regular';
+  src: url('/fonts/GlacialIndifference-Regular.otf') format('opentype');
 }
 
 html {
