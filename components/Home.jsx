@@ -10,6 +10,7 @@ import Form from "@/components/Form";
 import Footer from "@/components/Footer";
 import IntroScreen from "@/components/IntroScreen";
 import CenterCarousel from "./InstagramCarousel";
+import Post from "./Post";
 
 const START_FRAME = 20;
 const END_FRAME = 531;
@@ -116,9 +117,10 @@ export default function HomeClient({ stories }) {
                     <Quote />
                     <CardStack />
                     <StackingImages />
-                    {stories}  {/* 👈 Stories is passed as a prop (a React node) */}
+                    {stories}
                     <Form />
-                    <CenterCarousel posts={posts} />
+                    {/* <CenterCarousel posts={posts} /> */}
+                    <Post />
                     <Footer />
                 </>
             )}

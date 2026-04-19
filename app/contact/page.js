@@ -11,7 +11,6 @@ const page = () => {
         <div>
             <SmoothScroll />
             <Header2 />
-
             <Form />
             <Footer />
         </div>

@@ -72,7 +72,6 @@ const JoinTeamPage = () => {
     return (
         <div className="w-full bg-[#f3eee8] flex flex-col items-center pt-32 md:pt-32 px-5 xl:px-6">
 
-            {/* PAGE HEADING */}
             <h1 className="text-[28px] xl:text-[44px] font-centrathin font-bold tracking-tight text-[#38433b]  mb-4 text-center">
                 Why Arqen ?
             </h1>
@@ -86,7 +85,6 @@ const JoinTeamPage = () => {
                 on building meaningful client relationships and closing deals.
             </p>
 
-            {/* JOB VACANCY */}
             <div className="w-full lg:max-w-3xl xl:max-w-4xl bg-[#ffffff] rounded-[10px] px-8 py-8 xl:px-10 xl:py-8 shadow-sm mb-20">
 
                 <h2 className="font-centrathin font-bold text-[#38433b] text-[26px] xl:text-[32px]  tracking-tight mb-2  ">
@@ -102,7 +100,6 @@ const JoinTeamPage = () => {
 
             </div>
 
-            {/* APPLICATION FORM */}
             <form
                 onSubmit={handleSubmit}
                 className="w-full lg:max-w-xl xl:max-w-4xl font-centrathin font-bold text-[#38433b]"

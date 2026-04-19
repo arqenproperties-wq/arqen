@@ -21,10 +21,6 @@ export default function PeopleSection() {
         gsap.set([centerCol, rightCol], { y: 0 });
 
 
-        /* ===============================
-           COLUMN MOVEMENT
-        =============================== */
-
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: '.section-bg',
@@ -44,13 +40,9 @@ export default function PeopleSection() {
                 ease: "easeIn"
             }, 0);
 
-        /* ===============================
-           TEXT PIN
-        =============================== */
 
         ScrollTrigger.matchMedia({
 
-            // ✅ Mobile
             "(min-width: 768px)": function () {
 
                 ScrollTrigger.create({
@@ -65,14 +57,13 @@ export default function PeopleSection() {
 
             },
 
-            // ✅ Tablet + Desktop
             "(max-width: 768px)": function () {
 
                 ScrollTrigger.create({
                     trigger: ".section-bg",
                     start: "top top",
                     end: "bottom top+=20%",
-                    pin: false, // no pin
+                    pin: false,
                 });
 
             }
@@ -97,7 +88,6 @@ export default function PeopleSection() {
 
                 <div className="grid grid-cols-12 gap-6 h-[125vh] xl:h-[150vh] ">
 
-                    {/* ✅ PINNED TEXT */}
                     <div
                         ref={textRef}
                         className=" col-span-10 md:col-span-6 "
@@ -107,7 +97,6 @@ export default function PeopleSection() {
                         </h2>
                     </div>
 
-                    {/* CENTER */}
                     <div
                         ref={centerColRef}
                         className="col-span-6 md:col-span-3 h-fit flex flex-col gap-3 xl:gap-6 relative top-80 lg:top-40 overflow-hidden"
@@ -123,7 +112,6 @@ export default function PeopleSection() {
                         ))}
                     </div>
 
-                    {/* RIGHT */}
                     <div
                         ref={rightColRef}
                         className="col-span-6 md:col-span-3 h-fit flex flex-col gap-3 xl:gap-6  relative top-200 lg:top-100 overflow-hidden"

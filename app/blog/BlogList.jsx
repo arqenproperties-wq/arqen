@@ -44,7 +44,6 @@ function BlogList({ posts }) {
         <div ref={containerRef} className="w-full lg:max-w-4xl xl:max-w-6xl 2xl:max-w-7xl mx-auto  pt-32">
             <div className="w-full flex flex-col lg:flex-row justify-center items-start gap-8 text-[#38433b]">
 
-                {/* ── Pinned heading (left) ── */}
                 <div ref={headingRef} className="hidden lg:block w-full lg:w-[35%] flex-shrink-0 px-5 md:px-10 lg:px-0">
                     <h2 className=" font-centrathin font-bold  tracking-tight  text-[36px] md:text-[38px] xl:text-[48px] 2xl:text-[66px] 2xl:leading-18  pt-10 text-[#38433b] ">
                         Stories worth your time
@@ -55,7 +54,6 @@ function BlogList({ posts }) {
                         Stories worth your time
                     </h2>
                 </div>
-                {/* ── Scrolling posts (right) ── */}
                 <div ref={postsRef} className="w-full lg:w-[65%] ">
                     {posts.map((post) => {
                         const imageUrl = post.image ? urlFor(post.image).url() : null;
@@ -66,7 +64,6 @@ function BlogList({ posts }) {
                                 key={post._id} className="px-5 md:px-10 lg:px-0 cursor-pointer">
                                 <div className="w-full flex flex-col lg:flex-row gap-8 mt-8 lg:mt-10">
 
-                                    {/* Image */}
                                     {imageUrl && (
                                         <img
                                             src={imageUrl}
@@ -77,7 +74,6 @@ function BlogList({ posts }) {
                                         />
                                     )}
 
-                                    {/* Content */}
                                     <div className="w-full lg:w-1/2 flex flex-col justify-between gap-4">
                                         <div>
                                             <h1 className="font-centrathin font-bold tracking-tight text-[26px] lg:text-[27px] xl:text-[30px] 2xl:text-[34px] leading-9 xl:leading-10  2xl:leading-11  relative bottom-5 text-[#38433b]">

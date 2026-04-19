@@ -8,7 +8,6 @@ import { useRouter } from "next/navigation";
 const builder = imageUrlBuilder(client);
 const urlFor = (source) => builder.image(source);
 
-// ✅ Fetch only 3 posts + required fields
 
 const MoreStories = ({ posts }) => {
     const router = useRouter();
@@ -29,7 +28,6 @@ const MoreStories = ({ posts }) => {
                         <div onClick={() => router.push(`/blog/${post.slug.current}`)} key={post._id}>
                             <div className="w-full flex flex-col lg:flex-row justify-evenly gap-4 2xl:gap-8 mt-8 2xl:mt-10 cursor-pointer">
 
-                                {/* Image */}
                                 <div className="w-full lg:w-1/2">
                                     {imageUrl && (
                                         <img
@@ -42,7 +40,6 @@ const MoreStories = ({ posts }) => {
                                     )}
                                 </div>
 
-                                {/* Content */}
                                 <div className="w-full lg:w-1/2 flex flex-col justify-between">
                                     <div>
                                         <h1 className="font-centrathin font-bold text-[#38433b] tracking-tight text-[26px] lg:text-[27px] xl:text-[30px] 2xl:text-[34px] leading-9 xl:leading-10  2xl:leading-11  relative bottom-5 ">

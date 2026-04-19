@@ -153,7 +153,7 @@ const Header2 = ({ lenisRef }) => {
                 <div className='w-fit flex justify-between items-center gap-4 lg:gap-6 xl:gap-6 mr-4'>
                     {/* <div ref={langRef} className='flex gap-3 cursor-pointer'>
                         <Image
-                            src="/globe1.svg"
+                            src="/globe.svg"
                             alt="Logo"
                             width={500}
                             height={500}

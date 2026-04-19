@@ -5,14 +5,12 @@ const PrivacyPolicy = () => {
         <section className="bg-[#f3eee8] w-full px-5 xl:px-12 pt-32">
             <div className="w-full md:max-w-[550px] lg:max-w-[700px] xl:max-w-5xl 2xl:max-w-7xl mx-auto xl:px-8">
 
-                {/* PAGE TITLE */}
                 <h1 className="text-[36px] md:text-[40px] xl:text-[60px] 2xl:text-[72px] font-centrathin font-bold mb-6 xl:mb-10 text-[#38433b] ">
                     Privacy policy
                 </h1>
 
                 <div className="space-y-8 text-[#38433b] font-centrathin font-bold">
 
-                    {/* Intro */}
                     <div>
                         <p className="leading-[24px] text-[16px] xl:text-[17px] 2xl:text-[18px]">
                             Arqen Properties is committed to protecting your privacy. This Privacy Policy explains what

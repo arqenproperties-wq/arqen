@@ -5,7 +5,6 @@ import { gsap } from 'gsap'
 import Image from 'next/image'
 import { Heart, MessageCircle, Send, Bookmark, MoreHorizontal } from 'lucide-react'
 
-// ─── Default dimensions for SSR ───────────────────────────────────────────────
 const DEFAULT_DIMENSIONS = {
   CARD_W: 310,
   CARD_H: 640,
@@ -17,10 +16,7 @@ const DEFAULT_DIMENSIONS = {
   IMG_GAP: 20,
 }
 
-// ─── Responsive Layout constants ───────────────────────────────────────────────
-// These scale based on screen width
 function getResponsiveDimensions() {
-  // Return default on server to avoid hydration mismatch
   if (typeof window === 'undefined') {
     return DEFAULT_DIMENSIONS
   }
@@ -55,7 +51,6 @@ function getResponsiveDimensions() {
   }
 }
 
-/* ================= IMAGE STRIP ================= */
 function ImageStrip({ posts, stripRef, dimensions, initialX }) {
   const { CARD_W, IMG_GAP, STATUS_H, POST_HEADER_H, CARD_H } = dimensions
   const IMG_STRIP_TOP_OFFSET = -(CARD_H / 2) + STATUS_H + POST_HEADER_H
@@ -67,7 +62,7 @@ function ImageStrip({ posts, stripRef, dimensions, initialX }) {
       style={{
         top: `calc(50vh + ${IMG_STRIP_TOP_OFFSET}px)`,
         gap: `${IMG_GAP}px`,
-        transform: `translateX(${initialX}px)`,  // ← pre-center before GSAP fires
+        transform: `translateX(${initialX}px)`,
       }}
     >
       {posts.map((post) => (
@@ -83,7 +78,6 @@ function ImageStrip({ posts, stripRef, dimensions, initialX }) {
   )
 }
 
-/* ================= INSTAGRAM UI ================= */
 function InstagramUIOverlay({ post, dimensions }) {
   const { CARD_W, CARD_H, STATUS_H } = dimensions
   const [liked, setLiked] = useState(false)
@@ -124,10 +118,8 @@ function InstagramUIOverlay({ post, dimensions }) {
         height: CARD_H,
       }}
     >
-      {/* Status spacer */}
       <div style={{ height: STATUS_H }} />
 
-      {/* Header */}
       <div className="h-[42px] md:h-[46px] bg-white flex items-center justify-between px-3 border-b border-gray-200 pointer-events-auto">
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 md:w-8 md:h-8 rounded-full p-[2px] bg-gradient-to-tr from-orange-400 via-pink-500 to-purple-600">
@@ -147,14 +139,12 @@ function InstagramUIOverlay({ post, dimensions }) {
         <MoreHorizontal size={isMobile ? 16 : 18} />
       </div>
 
-      {/* Image window - spacer */}
       <div
         className="w-full flex-shrink-0"
         style={{
           height: dimensions.CARD_H - STATUS_H - 42 - 44 - 20 - (isMobile ? 60 : 65)
         }}
       />
-      {/* Actions */}
       <div className="bg-white flex items-center justify-between px-3 py-2 pointer-events-auto flex-shrink-0">
         <div className="flex items-center gap-3 md:gap-4">
           <button onClick={handleLike} className="touch-manipulation">
@@ -176,12 +166,10 @@ function InstagramUIOverlay({ post, dimensions }) {
         </button>
       </div>
 
-      {/* Likes */}
       <div className="bg-white px-3 text-[10px] md:text-[11px] font-bold">
         {localLikes.toLocaleString()} likes
       </div>
 
-      {/* Caption */}
       <div className="bg-white px-3 text-[10px] md:text-[11px] flex-shrink-0">
         <span className="font-bold">arqenproperties </span>
         <span className="break-words">
@@ -189,12 +177,10 @@ function InstagramUIOverlay({ post, dimensions }) {
         </span>
       </div>
 
-      {/* Comments */}
       <div className="bg-white px-3 text-[9px] md:text-[10px] text-gray-500">
         View all {post.comments} comments
       </div>
 
-      {/* Timestamp */}
       <div className="bg-white px-3 pb-1 text-[9px] md:text-[10px] text-gray-400 uppercase tracking-wide">
         {post.timestamp}
       </div>
@@ -204,7 +190,6 @@ function InstagramUIOverlay({ post, dimensions }) {
   )
 }
 
-/* ================= PHONE ================= */
 function PhoneFrameOverlay({ dimensions }) {
   const { CARD_W, CARD_H, BEZEL } = dimensions
   const outerW = CARD_W + BEZEL * 2
@@ -227,12 +212,10 @@ function PhoneFrameOverlay({ dimensions }) {
         boxShadow: '0 0 0 1.5px #3a3a3a, 0 20px 60px rgba(0,0,0,0.4)',
       }}
     >
-      {/* Dynamic Island */}
       <div className="absolute top-2 md:top-3 left-1/2 -translate-x-1/2 w-[90px] md:w-[100px] h-[25px] md:h-[30px] bg-black rounded-full flex items-center justify-center z-20">
         <div className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-gray-800" />
       </div>
 
-      {/* Status bar */}
       <div
         className="absolute top-0 left-0 right-0 bg-white flex justify-between px-3 md:px-4 pt-3 md:pt-4"
         style={{ height: dimensions.STATUS_H, borderRadius: `${innerR}px ${innerR}px 0 0` }}
@@ -241,7 +224,6 @@ function PhoneFrameOverlay({ dimensions }) {
         {!isMobile && <span className="text-[10px] md:text-xs"> 100%</span>}
       </div>
 
-      {/* Home indicator */}
       <div
         className="absolute bottom-0 left-0 right-0 bg-white flex items-center justify-center"
         style={{ height: dimensions.HOME_H, borderRadius: `0 0 ${innerR}px ${innerR}px` }}
@@ -252,22 +234,19 @@ function PhoneFrameOverlay({ dimensions }) {
   )
 }
 
-/* ================= ROOT ================= */
 export default function CenterCarousel({ posts = [] }) {
   const imageStripRef = useRef(null)
   const [active, setActive] = useState(0)
   const initialized = useRef(false)
-  const [dimensions, setDimensions] = useState(DEFAULT_DIMENSIONS) // Start with default
-  const [mounted, setMounted] = useState(false) // Track mount state
+  const [dimensions, setDimensions] = useState(DEFAULT_DIMENSIONS)
+  const [mounted, setMounted] = useState(false)
   const [touchStart, setTouchStart] = useState(0)
   const [touchEnd, setTouchEnd] = useState(0)
 
-  // Handle client-side dimension calculation after mount
-  // Handle client-side dimension calculation after mount
   useEffect(() => {
     setMounted(true)
     const updateDimensions = () => {
-      initialized.current = false   // ← ADD THIS LINE
+      initialized.current = false
       setDimensions(getResponsiveDimensions())
     }
 
@@ -276,7 +255,6 @@ export default function CenterCarousel({ posts = [] }) {
     return () => window.removeEventListener('resize', updateDimensions)
   }, [])
 
-  // GSAP animation for image strip
   useLayoutEffect(() => {
     if (!imageStripRef.current || !dimensions) return
     const vw = window.innerWidth
@@ -290,7 +268,6 @@ export default function CenterCarousel({ posts = [] }) {
     }
   }, [active, dimensions])
 
-  // Touch handlers for mobile swipe
   const handleTouchStart = (e) => {
     setTouchStart(e.targetTouches[0].clientX)
   }
@@ -306,10 +283,8 @@ export default function CenterCarousel({ posts = [] }) {
 
     if (Math.abs(diff) > minSwipeDistance) {
       if (diff > 0) {
-        // Swipe left - next
         setActive((p) => (p + 1) % posts.length)
       } else {
-        // Swipe right - prev
         setActive((p) => (p - 1 + posts.length) % posts.length)
       }
     }
@@ -322,7 +297,6 @@ export default function CenterCarousel({ posts = [] }) {
 
   const isMobile = mounted && window.innerWidth < 640
 
-  // Show loading state or simple placeholder during SSR/hydration
   if (!mounted) {
     return (
       <div className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-black/5">
@@ -348,7 +322,6 @@ export default function CenterCarousel({ posts = [] }) {
             <PhoneFrameOverlay dimensions={dimensions} />
           </div>
 
-          {/* Navigation Arrows - hidden on mobile, use swipe instead */}
           {!isMobile && (
             <>
               <button
@@ -366,7 +339,6 @@ export default function CenterCarousel({ posts = [] }) {
             </>
           )}
 
-          {/* Swipe hint for mobile */}
           {isMobile && (
             <div className="absolute bottom-20 z-20 text-white/40 text-xs bg-black/30 px-3 py-1 rounded-full backdrop-blur-sm pointer-events-none">
               ← Swipe →

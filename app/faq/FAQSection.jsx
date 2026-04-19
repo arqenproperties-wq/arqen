@@ -59,7 +59,6 @@ export default function FAQSection() {
 
             ScrollTrigger.matchMedia({
 
-                // only enable pin on large screens
                 "(min-width: 1024px)": function () {
 
                     ScrollTrigger.create({
@@ -88,7 +87,6 @@ export default function FAQSection() {
         >
 
             <div className="max-w-5xl xl:max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
-                {/* LEFT SIDE */}
 
                 <div
                     ref={leftRef}
@@ -103,7 +101,6 @@ export default function FAQSection() {
 
                 </div>
 
-                {/* RIGHT SIDE */}
 
                 <div className="col-span-8 space-y-16">
 

@@ -5,15 +5,12 @@ const LegalNotice = () => {
         <section className="bg-[#f3eee8] w-full px-5 xl:px-12 pt-32">
             <div className="w-full md:max-w-[550px] lg:max-w-[700px] xl:max-w-5xl 2xl:max-w-7xl mx-auto  xl:px-8">
 
-                {/* PAGE TITLE */}
                 <h1 className="text-[36px] md:text-[40px] xl:text-[60px] 2xl:text-[72px] font-opensans font-light mb-6 xl:mb-10  text-black ">
                     Legal notice
                 </h1>
 
-                {/* SECTION */}
                 <div className="space-y-8 xl:space-y-12 2xl:space-y-16 text-[#313131] font-sourcesans3">
 
-                    {/* Terms */}
                     <div>
                         <h2 className="text-[20px] xl:text-[24px] 2xl:text-[28px] font-light mb-2 xl:mb-4 ">
                             Terms and conditions of use
@@ -26,7 +23,6 @@ const LegalNotice = () => {
                         </p>
                     </div>
 
-                    {/* Limited use */}
                     <div>
                         <h2 className="text-[20px] xl:text-[24px] 2xl:text-[28px] font-light mb-2 xl:mb-4">Limited use</h2>
                         <p className="leading-[24px] text-[16px]  xl:text-[17px] 2xl:text-[18px]">
@@ -41,7 +37,6 @@ const LegalNotice = () => {
                         </p>
                     </div>
 
-                    {/* Limits of liability */}
                     <div>
                         <h2 className="text-[20px] xl:text-[24px] 2xl:text-[28px] font-light mb-2 xl:mb-4">
                             Limits of liability
@@ -60,7 +55,6 @@ const LegalNotice = () => {
                         </p>
                     </div>
 
-                    {/* Links */}
                     <div>
                         <h2 className="text-[20px] xl:text-[24px] 2xl:text-[28px] font-light mb-2 xl:mb-4">Links</h2>
                         <p className="leading-[24px] text-[16px]  xl:text-[17px] 2xl:text-[18px]">
@@ -72,7 +66,6 @@ const LegalNotice = () => {
                         </p>
                     </div>
 
-                    {/* Information from arqen */}
                     <div>
                         <h2 className="text-[20px] xl:text-[24px] 2xl:text-[28px] font-light mb-2 xl:mb-4">
                             Information from arqen
@@ -89,7 +82,6 @@ const LegalNotice = () => {
                         </p>
                     </div>
 
-                    {/* Law */}
                     <div>
                         <h2 className="text-[20px] xl:text-[24px] 2xl:text-[28px] font-light mb-2 xl:mb-4">
                             Law and jurisdiction

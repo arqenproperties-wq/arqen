@@ -7,7 +7,6 @@ import { Image } from "next-sanity/image";
 const builder = imageUrlBuilder(client);
 const urlFor = (source) => builder.image(source);
 
-// ✅ Fetch only 3 posts + required fields
 const POSTS_QUERY = `
 *[
   _type == "post" &&

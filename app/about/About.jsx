@@ -14,7 +14,6 @@ export default function About() {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            // Parallax on the whole image div
             gsap.to(div1Ref.current, {
                 yPercent: -100,
                 ease: "easeIn",
@@ -68,7 +67,6 @@ export default function About() {
         <section className="bg-[#f3eee8] px-6 lg:px-16 xl:px-0 2xl:px-0 py-0 xl:py-24 2xl:py-28 w-full  relative z-10">
             <div className="w-full flex flex-col  relative top-0 left-0">
 
-                {/* Text block — top right aligned (offset left via padding) */}
                 <div className="xl:max-w-[100%] xl:pl-[20%] 2xl:pl-[25%] xl:pr-20 2xl:pr-40">
                     <h2 className="text-[#38433b] font-centrathin font-bold  text-[30px] md:text-[36px] xl:text-[42px] 2xl:text-[48px]  leading-[44px] md:leading-[48px] xl:leading-[56px] 2xl:leading-[62px]">
 
@@ -95,7 +93,6 @@ export default function About() {
 
                     </h2>
                 </div>
-                {/* Two images staggered — image1 left, image2 right overlapping vertically */}
 
             </div>
 

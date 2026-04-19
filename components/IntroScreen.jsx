@@ -318,22 +318,23 @@ const IntroScreen = ({ onExperienceEnd }) => {
 
 export default IntroScreen
 
-const ReelDigit = ({ value, delay = 0 }) => {
-    const [offset, setOffset] = useState(0)
+const ReelDigit = ({ value, delay = 0, quick = false }) => {
+    const [offset, setOffset] = useState(quick ? -90 : 0)  // start above if quick
     const height = 90
 
     useEffect(() => {
-        const spins = 1
-        const finalOffset = -(spins * 10 * height + value * height)
+        const finalOffset = quick ? 0 : -(1 * 10 * height + value * height)
 
         const t = setTimeout(() => {
             setOffset(finalOffset)
         }, delay)
 
         return () => clearTimeout(t)
-    }, [value, delay])
+    }, [value, delay, quick])
 
-    const strip = Array.from({ length: 40 }, (_, i) => i % 10)
+    const strip = quick
+        ? [value]                                          // only "1", nothing else
+        : Array.from({ length: 40 }, (_, i) => i % 10)
 
     return (
         <div style={{ height, overflow: 'hidden' }}>
@@ -365,7 +366,12 @@ const SlotLoader = ({ progress }) => {
     return (
         <div className="absolute bottom-0 flex items-center gap-1 mt-6">
             {digits.map((d, i) => (
-                <ReelDigit key={i} value={d} delay={i * 140} />
+                <ReelDigit
+                    key={i}
+                    value={d}
+                    delay={i * 140}
+                    quick={digits.length === 3 && i === 0}
+                />
             ))}
             <span className="text-[#38433b] text-[14px] lg:text-[16px] ml-2 mb-8">%</span>
         </div>

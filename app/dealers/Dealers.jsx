@@ -83,12 +83,10 @@ export default function Dealers() {
         <section className="bg-[#f3eee8] w-full px-5 md:px-8 xl:px-12 pt-32">
             <div className="w-full lg:max-w-[700px] xl:max-w-5xl 2xl:max-w-7xl mx-auto xl:px-8">
 
-                {/* Heading */}
                 <h2 className="text-[36px] md:text-[40px] xl:text-[60px] 2xl:text-[76px] font-centrathin font-bold mb-6 xl:mb-10 2xl:mb-16 text-[#38433b]">
                     Find a distributor
                 </h2>
 
-                {/* List */}
                 <div className="space-y-10">
                     {distributors.map((item, index) => (
                         <div
@@ -97,7 +95,6 @@ export default function Dealers() {
                         >
                             <div className="grid md:grid-cols-[0.8fr_1.2fr] gap-3 text-[#38433b]">
 
-                                {/* Left */}
                                 <div>
                                     <p className="text-[16px] xl:text-[18px] 2xl:text-[22px] font-centrathin font-bold tracking-wide ">
                                         {item.company}
@@ -108,7 +105,6 @@ export default function Dealers() {
                                     </h3>
                                 </div>
 
-                                {/* Right */}
                                 <div className="space-y-2 font-centrathin font-bold text-[14px] xl:text-[16px] 2xl:text-[18px] ">
 
                                     <div className="flex items-start gap-3">

@@ -52,10 +52,8 @@ export default function ScrollRevealImage() {
 
     return (
         <>
-            {/* LAYER 1: Image — always fixed, always behind everything */}
             <div className="fixed inset-0 z-0 flex items-center justify-center overflow-hidden pointer-events-none">
 
-                {/* Title + Button overlay */}
                 <div className="absolute inset-0 z-10 flex flex-col gap-4 items-center justify-center pointer-events-none">
                     <h2
                         ref={titleRef}
@@ -93,7 +91,6 @@ export default function ScrollRevealImage() {
                     </div>
                 </div>
 
-                {/* The card that animates to fullscreen */}
                 <div
                     ref={wrapperRef}
                     className="relative overflow-hidden shrink-0 pointer-events-auto"
@@ -116,20 +113,17 @@ export default function ScrollRevealImage() {
 
             <div style={{ height: "calc(100vh + 800px)" }} />
 
-            {/* VIDEO MODAL */}
             {isModalOpen && (
                 <div
                     onClick={() => setIsModalOpen(false)}
                     className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-md animate-[fadeIn_0.25s_ease]"
                 >
-                    {/* Modal card */}
                     <div
                         onClick={(e) => e.stopPropagation()}
                         className="relative w-[min(900px,90vw)] bg-[#1a1a1a] rounded-2xl overflow-hidden
                         shadow-[0_32px_80px_rgba(0,0,0,0.8),0_0_0_1px_rgba(255,255,255,0.08)]
                         animate-[scaleIn_0.3s_cubic-bezier(0.34,1.56,0.64,1)]"
                     >
-                        {/* Close button */}
                         <button
                             onClick={() => setIsModalOpen(false)}
                             className="absolute top-3.5 right-3.5 z-10 w-9 h-9 rounded-full
@@ -140,14 +134,12 @@ export default function ScrollRevealImage() {
                             ✕
                         </button>
 
-                        {/* 16:9 video wrapper — percentage padding trick requires inline style */}
                         <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
                             <video
                                 controls
                                 autoPlay
                                 className="absolute inset-0 w-full h-full bg-black block"
                             >
-                                {/* Replace with your actual video source */}
                                 <source src="/video/arqen.mp4" type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>

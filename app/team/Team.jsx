@@ -18,7 +18,6 @@ const MeetTeamPage = () => {
     return (
         <div className="w-full bg-[#f3eee8] flex flex-col items-center pt-32 md:pt-32 px-5 xl:px-6">
 
-            {/* PAGE HEADING */}
             <h1 className="text-[28px] xl:text-[44px] font-opensans font-light tracking-tight text-black  mb-4 text-center">
                 Meet the Team
             </h1>
@@ -30,7 +29,6 @@ const MeetTeamPage = () => {
                 <span className="text-black font-medium">luxury properties, villa communities, and investor portfolios.</span>
             </p>
 
-            {/* TEAM CARDS */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full lg:max-w-3xl">
 
                 {team.map((member, i) => (
@@ -39,7 +37,6 @@ const MeetTeamPage = () => {
                         className="bg-white rounded-[12px] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
                     >
 
-                        {/* IMAGE */}
                         <div className="w-full h-[350px] bg-black overflow-hidden">
                             <img
                                 src={member.image}
@@ -48,7 +45,6 @@ const MeetTeamPage = () => {
                             />
                         </div>
 
-                        {/* INFO */}
                         <div className="px-6 py-6 text-center">
 
                             <h3 className="font-opensans text-[22px] font-light tracking-tight mb-1 [transform:scaleY(0.85)]">
