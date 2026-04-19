@@ -74,8 +74,14 @@ export default function Post() {
 
     return (
         <div className="w-full overflow-hidden pt-40 bg-[#f3eee8] ">
-            <div>
+            <div className='w-full flex justify-between mb-6 px-10'>
+                <div></div>
                 <h2 className="text-3xl  font-centrabook text-center mb-8 text-[#475049]">Follow Us on Instagram</h2>
+                <div className='flex justify-center '>
+                    <p className="hidden lg:block lg:text-[16px] font-centrathin  italic text-[#4c5950] opacity-80">
+                        Hover to stop
+                    </p>
+                </div>
             </div>
             <div
                 ref={containerRef}
@@ -87,6 +93,8 @@ export default function Post() {
                     </div>
                 ))}
             </div>
+
+
         </div>
     )
 }
