@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
+
 const IntroScreen = ({ onExperienceEnd }) => {
     const canvasRef = useRef(null)
     const videoRef = useRef(null)
@@ -10,6 +11,7 @@ const IntroScreen = ({ onExperienceEnd }) => {
     const [entered, setEntered] = useState(false)
     const [muted, setMuted] = useState(true)
     const [video1Ready, setVideo1Ready] = useState(false)
+    const [video2Ready, setVideo2Ready] = useState(false)
     const [progress, setProgress] = useState(0)
     const [showLoader, setShowLoader] = useState(true)
     const video1ReadyRef = useRef(false)
@@ -17,68 +19,41 @@ const IntroScreen = ({ onExperienceEnd }) => {
     const enterBtnRef = useRef(null)
     const withoutSoundRef = useRef(null)
 
+    // ─── GSAP intro animation (runs once loader is gone) ─────────────────────
     useEffect(() => {
         if (showLoader) return
 
-        const tl = gsap.timeline({ delay: 0.75, defaults: { ease: "power3.out" } })
-
-        tl.from(logoRef.current, {
-            y: 20,
-            opacity: 0,
-            duration: 1.0,
-        })
-            .from(
-                enterBtnRef.current,
-                {
-                    y: 30,
-                    opacity: 0,
-                    duration: 1.0,
-                },
-                "-=0.6"
-            )
-            .from(
-                withoutSoundRef.current,
-                {
-                    y: 30,
-                    opacity: 0,
-                    duration: 1.0,
-                },
-                "-=0.6"
-            )
-
+        const tl = gsap.timeline({ delay: 0.75, defaults: { ease: 'power3.out' } })
+        tl.from(logoRef.current, { y: 20, opacity: 0, duration: 1.0 })
+            .from(enterBtnRef.current, { y: 30, opacity: 0, duration: 1.0 }, '-=0.6')
+            .from(withoutSoundRef.current, { y: 30, opacity: 0, duration: 1.0 }, '-=0.6')
     }, [showLoader])
+
     useEffect(() => {
         video1ReadyRef.current = video1Ready
     }, [video1Ready])
 
+    // ─── Initial tick: show loader is "alive" before any video loads ─────────
     useEffect(() => {
-        const earlyStops = [31, 57, 100]
-        let index = 0
-        let timeout
-
-        const showNextStop = () => {
-            if (index < earlyStops.length) {
-                setProgress(earlyStops[index])
-                index++
-
-                if (index < earlyStops.length) {
-                    timeout = setTimeout(showNextStop, 800)
-                }
-            }
-        }
-
-        timeout = setTimeout(showNextStop, 400)
-
-        const hideLoaderTimeout = setTimeout(() => {
-            setShowLoader(false)
-        }, 4000)
-
-        return () => {
-            clearTimeout(timeout)
-            clearTimeout(hideLoaderTimeout)
-        }
+        const t = setTimeout(() => setProgress(15), 300)
+        return () => clearTimeout(t)
     }, [])
 
+    // ─── Video 1 ready → bump to 50 % ─────────────────────────────────────────
+    useEffect(() => {
+        if (video1Ready) setProgress(50)
+    }, [video1Ready])
+
+    // ─── Both videos ready → go to 100 %, then hide loader ───────────────────
+    useEffect(() => {
+        if (!video1Ready || !video2Ready) return
+
+        setProgress(100)
+        const t = setTimeout(() => setShowLoader(false), 700)
+        return () => clearTimeout(t)
+    }, [video1Ready, video2Ready])
+
+    // ─── Video 1: canvas loop + canplaythrough ────────────────────────────────
     useEffect(() => {
         const video = videoRef.current
         const canvas = canvasRef.current
@@ -100,13 +75,10 @@ const IntroScreen = ({ onExperienceEnd }) => {
         }
 
         const handleTimeUpdate = () => {
-            const duration = video.duration
-            if (forward) {
-                if (video.currentTime >= duration - 0.05) {
-                    forward = false
-                    video.pause()
-                    playBackward()
-                }
+            if (forward && video.currentTime >= video.duration - 0.05) {
+                forward = false
+                video.pause()
+                playBackward()
             }
         }
 
@@ -140,16 +112,24 @@ const IntroScreen = ({ onExperienceEnd }) => {
         }
     }, [])
 
+    // ─── Video 2: ended + canplaythrough ─────────────────────────────────────
     useEffect(() => {
         const video2 = video2Ref.current
         if (!video2) return
 
         const handleEnd = () => onExperienceEnd?.()
+        const handleCanPlay = () => setVideo2Ready(true)
 
         video2.addEventListener('ended', handleEnd)
+        video2.addEventListener('canplaythrough', handleCanPlay)
+
+        // Trigger preload — the video element already has preload="auto" but
+        // calling load() ensures browsers that defer preloading start immediately.
+        video2.load()
 
         return () => {
             video2.removeEventListener('ended', handleEnd)
+            video2.removeEventListener('canplaythrough', handleCanPlay)
         }
     }, [onExperienceEnd])
 
@@ -163,42 +143,22 @@ const IntroScreen = ({ onExperienceEnd }) => {
         }
     }
 
-    // const handleSkip = () => {
-    //     const video2 = video2Ref.current
-    //     if (!video2) return
-    //     video2.playbackRate = 8
-    // }
-
     const handleSkip = () => {
         const video2 = video2Ref.current
         if (!video2) return
-
         video2.currentTime = video2.duration
-
         onExperienceEnd?.()
     }
-
-    // const handleSkip = () => {
-    //     const video2 = video2Ref.current
-    //     if (!video2 || !video2.duration) return
-
-    //     // Go slightly before the end (about 0.12s = ~3–4 frames at 30fps)
-    //     const framesToShow = 1.5
-
-    //     video2.currentTime = Math.max(video2.duration - framesToShow, 0)
-
-    //     video2.play()
-    // }
 
     return (
         <div className="relative w-full h-screen overflow-hidden">
 
+            {/* ── Loader ── */}
             <div
                 className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-white transition-opacity duration-700"
                 style={{ opacity: showLoader ? 1 : 0, pointerEvents: showLoader ? 'auto' : 'none' }}
             >
                 <div className="relative w-[100px] xl:w-[125px] h-auto mb-46">
-
                     <Image
                         src="/newlogo2.png"
                         alt="Logo"
@@ -206,12 +166,9 @@ const IntroScreen = ({ onExperienceEnd }) => {
                         height={500}
                         className="w-full h-auto object-contain opacity-10"
                     />
-
                     <div
                         className="absolute inset-0 transition-all duration-500 ease-out"
-                        style={{
-                            clipPath: `inset(${100 - progress}% 0% 0% 0%)`
-                        }}
+                        style={{ clipPath: `inset(${100 - progress}% 0% 0% 0%)` }}
                     >
                         <Image
                             src="/newlogo2.png"
@@ -225,6 +182,7 @@ const IntroScreen = ({ onExperienceEnd }) => {
                 <SlotLoader progress={progress} />
             </div>
 
+            {/* ── Intro screen (1.mp4 canvas) ── */}
             <div
                 className="absolute inset-0 transition-opacity duration-700"
                 style={{ opacity: entered ? 0 : 1, pointerEvents: entered ? 'none' : 'auto' }}
@@ -241,7 +199,7 @@ const IntroScreen = ({ onExperienceEnd }) => {
                     ref={canvasRef}
                     className="w-full h-screen object-cover absolute top-0 left-0"
                 />
-                <div className='w-full h-screen bg-black opacity-25 absolute top-0 left-0' />
+                <div className="w-full h-screen bg-black opacity-25 absolute top-0 left-0" />
 
                 <div className="flex flex-col items-center justify-center absolute inset-0">
                     <div ref={logoRef} className="w-[225px] xl:w-[250px] h-auto mb-3 z-10">
@@ -250,10 +208,10 @@ const IntroScreen = ({ onExperienceEnd }) => {
                             alt="Logo"
                             width={500}
                             height={500}
-                            className="w-[225px] xl:w-[250px] h-auto object-contain "
+                            className="w-[225px] xl:w-[250px] h-auto object-contain"
                         />
                     </div>
-                    <h1 className="text-center  opacity-80  text-[50px] xl:text-[58px] 2xl:text-[66px] leading-16 2xl:leading-20 font-centrathin font-bold   text-white ">
+                    <h1 className="text-center opacity-80 text-[50px] xl:text-[58px] 2xl:text-[66px] leading-16 2xl:leading-20 font-centrathin font-bold text-white">
                         Welcome to arqen
                     </h1>
                     <div
@@ -266,27 +224,28 @@ const IntroScreen = ({ onExperienceEnd }) => {
                             flex justify-center items-center
                             border border-white
                             mt-6 xl:mt-10 cursor-pointer
-                            z-10 text-white hover:text-[#161d17] 
+                            z-10 text-white hover:text-[#161d17]
                             hover:bg-white
                             backdrop-blur-[10px]
                             hover:shadow-none
                             shadow-[0_0_2.846px_#0000001a,0_1.423px_11.386px_#0000001f,inset_4.27px_4.27px_.712px_-4.27px_#ffffffbf,inset_-4.27px_-4.27px_.712px_-4.27px_#fffc,inset_1.423px_1.423px_1.423px_-.712px_#ffffffbf,inset_-1.423px_-1.423px_1.423px_-.712px_#ffffffbf,inset_0_0_1.423px_1.423px_#ffffff26,inset_0_0_1.423px_1.423px_#999,inset_0_0_22.771px_#f2f2f2]
                         "
                     >
-                        <h1 className=" text-center font-centrathin text-[18px] xl:text-[20px] 2xl:text-[22px] tracking-wider ">
+                        <h1 className="text-center font-centrathin text-[18px] xl:text-[20px] 2xl:text-[22px] tracking-wider">
                             Enter experience
                         </h1>
                     </div>
                     <h1
                         ref={withoutSoundRef}
                         onClick={() => handleEnter(false)}
-                        className="z-10 absolute left-1/2 -translate-x-1/2 bottom-16 text-white text-center font-centrathin text-[16px] xl:text-[20px] tracking-wider  underline decoration-2 underline-offset-2 decoration-[#ffffff80] cursor-pointer"
+                        className="z-10 absolute left-1/2 -translate-x-1/2 bottom-16 text-white text-center font-centrathin text-[16px] xl:text-[20px] tracking-wider underline decoration-2 underline-offset-2 decoration-[#ffffff80] cursor-pointer"
                     >
                         Enter without sound
                     </h1>
                 </div>
             </div>
 
+            {/* ── Experience video (output.mp4) ── */}
             <div
                 className="absolute inset-0 transition-opacity duration-700"
                 style={{ opacity: entered ? 1 : 0 }}
@@ -301,10 +260,10 @@ const IntroScreen = ({ onExperienceEnd }) => {
                 <button
                     onClick={handleSkip}
                     className="
-                        absolute bottom-4 right-4 md:bottom-16 md:right-16  
+                        absolute bottom-4 right-4 md:bottom-16 md:right-16
                         gap-2
                         underline decoration-2 underline-offset-2 xl:underline-offset-6 decoration-[#ffffff]
-                        text-white font-centrathin text-[14px] xl:text-[20px] tracking-wider 
+                        text-white font-centrathin text-[14px] xl:text-[20px] tracking-wider
                         cursor-pointer
                     "
                     style={{ pointerEvents: entered ? 'auto' : 'none' }}
@@ -318,22 +277,19 @@ const IntroScreen = ({ onExperienceEnd }) => {
 
 export default IntroScreen
 
+// ─── Slot-machine digit ───────────────────────────────────────────────────────
 const ReelDigit = ({ value, delay = 0, quick = false }) => {
-    const [offset, setOffset] = useState(quick ? -90 : 0)  // start above if quick
+    const [offset, setOffset] = useState(quick ? -90 : 0)
     const height = 90
 
     useEffect(() => {
         const finalOffset = quick ? 0 : -(1 * 10 * height + value * height)
-
-        const t = setTimeout(() => {
-            setOffset(finalOffset)
-        }, delay)
-
+        const t = setTimeout(() => setOffset(finalOffset), delay)
         return () => clearTimeout(t)
     }, [value, delay, quick])
 
     const strip = quick
-        ? [value]                                          // only "1", nothing else
+        ? [value]
         : Array.from({ length: 40 }, (_, i) => i % 10)
 
     return (
@@ -347,10 +303,8 @@ const ReelDigit = ({ value, delay = 0, quick = false }) => {
                 {strip.map((n, i) => (
                     <div
                         key={i}
-                        style={{
-                            height,
-                        }}
-                        className='font-centrathin font-bold  text-[38px] lg:text-[56px]  text-[#38433b] '
+                        style={{ height }}
+                        className="font-centrathin font-bold text-[38px] lg:text-[56px] text-[#38433b]"
                     >
                         {n}
                     </div>
