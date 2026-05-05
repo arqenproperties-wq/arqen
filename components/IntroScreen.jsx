@@ -19,7 +19,6 @@ const IntroScreen = ({ onExperienceEnd }) => {
     const enterBtnRef = useRef(null)
     const withoutSoundRef = useRef(null)
 
-    // ─── GSAP intro animation (runs once loader is gone) ─────────────────────
     useEffect(() => {
         if (showLoader) return
 
@@ -33,27 +32,26 @@ const IntroScreen = ({ onExperienceEnd }) => {
         video1ReadyRef.current = video1Ready
     }, [video1Ready])
 
-    // ─── Initial tick: show loader is "alive" before any video loads ─────────
     useEffect(() => {
-        const t = setTimeout(() => setProgress(15), 300)
-        return () => clearTimeout(t)
+        const t1 = setTimeout(() => setProgress(15), 300)
+        const t2 = setTimeout(() => setProgress(prev => Math.max(prev, 35)), 1800)
+        return () => { clearTimeout(t1); clearTimeout(t2) }
     }, [])
 
-    // ─── Video 1 ready → bump to 50 % ─────────────────────────────────────────
     useEffect(() => {
-        if (video1Ready) setProgress(50)
+        if (!video1Ready) return
+        setProgress(50)
+        const t = setTimeout(() => setProgress(prev => Math.max(prev, 75)), 1000)
+        return () => clearTimeout(t)
     }, [video1Ready])
 
-    // ─── Both videos ready → go to 100 %, then hide loader ───────────────────
     useEffect(() => {
         if (!video1Ready || !video2Ready) return
-
         setProgress(100)
         const t = setTimeout(() => setShowLoader(false), 700)
         return () => clearTimeout(t)
     }, [video1Ready, video2Ready])
 
-    // ─── Video 1: canvas loop + canplaythrough ────────────────────────────────
     useEffect(() => {
         const video = videoRef.current
         const canvas = canvasRef.current
@@ -112,7 +110,6 @@ const IntroScreen = ({ onExperienceEnd }) => {
         }
     }, [])
 
-    // ─── Video 2: ended + canplaythrough ─────────────────────────────────────
     useEffect(() => {
         const video2 = video2Ref.current
         if (!video2) return
@@ -123,8 +120,6 @@ const IntroScreen = ({ onExperienceEnd }) => {
         video2.addEventListener('ended', handleEnd)
         video2.addEventListener('canplaythrough', handleCanPlay)
 
-        // Trigger preload — the video element already has preload="auto" but
-        // calling load() ensures browsers that defer preloading start immediately.
         video2.load()
 
         return () => {
@@ -153,7 +148,6 @@ const IntroScreen = ({ onExperienceEnd }) => {
     return (
         <div className="relative w-full h-screen overflow-hidden">
 
-            {/* ── Loader ── */}
             <div
                 className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-white transition-opacity duration-700"
                 style={{ opacity: showLoader ? 1 : 0, pointerEvents: showLoader ? 'auto' : 'none' }}
@@ -182,7 +176,6 @@ const IntroScreen = ({ onExperienceEnd }) => {
                 <SlotLoader progress={progress} />
             </div>
 
-            {/* ── Intro screen (1.mp4 canvas) ── */}
             <div
                 className="absolute inset-0 transition-opacity duration-700"
                 style={{ opacity: entered ? 0 : 1, pointerEvents: entered ? 'none' : 'auto' }}
@@ -245,7 +238,6 @@ const IntroScreen = ({ onExperienceEnd }) => {
                 </div>
             </div>
 
-            {/* ── Experience video (output.mp4) ── */}
             <div
                 className="absolute inset-0 transition-opacity duration-700"
                 style={{ opacity: entered ? 1 : 0 }}
@@ -277,7 +269,6 @@ const IntroScreen = ({ onExperienceEnd }) => {
 
 export default IntroScreen
 
-// ─── Slot-machine digit ───────────────────────────────────────────────────────
 const ReelDigit = ({ value, delay = 0, quick = false }) => {
     const [offset, setOffset] = useState(quick ? -90 : 0)
     const height = 90
