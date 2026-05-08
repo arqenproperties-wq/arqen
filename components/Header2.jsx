@@ -261,14 +261,14 @@ const Header2 = ({ lenisRef }) => {
                         <hr className="w-[70%] my-4 border border-[#00000020]" />
 
 
-                        <div>
+                        {/* <div>
                             <h2 className="text-[#4c5950] text-[24px] xl:text-[32px] 2xl:text-[34px] leading-8 xl:leading-9 ">
                                 Brochure
                             </h2>
                             <p className="text-[12px] xl:text-[14px] text-gray-500 font-centrathin">
                                 Download Arqen details
                             </p>
-                        </div>
+                        </div> */}
 
                         <div className="flex gap-4 pt-4">
                             <Link href="https://www.facebook.com/ArqenProperties/" target="_blank" className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
