@@ -53,10 +53,10 @@ export default function Hero() {
             />
             <div className="relative top-10 z-10 flex h-full flex-col items-center justify-center text-center text-white px-6">
                 <h1 className="   md:hidden text-[38px] md:text-[56px] md:tracking-[0.08em] font-medium uppercase">
-                    OFFPLAN DEALS
+                    OFF-PLAN DEALS
                 </h1>
                 <h1 className="  font-poppins hidden md:block text-[38px] md:text-[56px] md:tracking-[0.08em] font-medium uppercase">
-                    OFFPLAN DEALS
+                    OFF-PLAN DEALS
                 </h1>
                 <div className="mt-5 space-y-1.5">
 
