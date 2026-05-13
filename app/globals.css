@@ -1,10 +1,17 @@
 @import "tailwindcss";
 
+.writing-mode-vertical {
+  writing-mode: vertical-rl;
+}
+
+
 @theme inline {
   --font-centrabook: 'CentraNo2-Book', sans-serif;
   --font-centrathin: 'CentraNo2-Thin', sans-serif;
   --font-glacialbold: 'GlacialIndifference-Bold', sans-serif;
   --font-glacialregular: 'GlacialIndifference-Regular', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+
 }
 
 @font-face {
@@ -14,6 +21,11 @@
 
 }
 
+
+@font-face {
+  font-family: "Poppins";
+  src: url('/poppins.otf') format('opentype');
+}
 
 @font-face {
   font-family: 'CentraNo2-Thin';
