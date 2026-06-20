@@ -22,7 +22,7 @@ const page = () => {
                 <h1 className='text-[24px] md:text-[44px] lg:text-[52px] xl:text-[62px] font-centrabook font-bold  text-[#38433b]'>LIVE AHEAD. LIVE ARQEN.</h1>
             </div>
             <CardStack2 />
-            <PeopleSection />
+            {/* <PeopleSection /> */}
             <Footer />
         </div>
     )
