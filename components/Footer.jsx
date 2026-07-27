@@ -32,7 +32,7 @@ const Footer = () => {
                             className="w-[175px] 2xl:w-[200px] h-auto object-contain relative right-2 top-2"
                         />
                         <h1 className="text-[22px] 2xl:text-[36px] font-centrabook tracking-tight ">
-                            Welcome to arqen
+                            Welcome to Arqen
                         </h1>
                         <p className='font-centrabook text-[16px] 2xl:text-[18px]'>
                             © 2026 Arqen
@@ -47,9 +47,9 @@ const Footer = () => {
                         <Link href="/" className='font-centrabook text-[15px] 2xl:text-[18px]'>
                             Home
                         </Link>
-                        <Link href="/" className='font-centrabook  text-[15px] 2xl:text-[18px]'>
+                        {/* <Link href="/" className='font-centrabook  text-[15px] 2xl:text-[18px]'>
                             ARQEN
-                        </Link>
+                        </Link> */}
                         <Link href="/about" className='font-centrabook  text-[15px] 2xl:text-[18px]'>
                             About us
                         </Link>
@@ -81,9 +81,9 @@ const Footer = () => {
                         <Link href="mailto:everybody@arqen.ae" className='font-centrabook text-[15px] 2xl:text-[18px]'>
                             everybody@arqen.ae
                         </Link>
-                        <Link href="tel:+971 0548881804" className='font-centrabook  text-[15px] 2xl:text-[18px]'>
+                        {/* <Link href="tel:+971 0548881804" className='font-centrabook  text-[15px] 2xl:text-[18px]'>
                             +971 0548881804
-                        </Link>
+                        </Link> */}
                         <p className="font-centrabook text-[15px] 2xl:text-[17px]">
                             Office 903 Onyx Tower 2, The Greens, Dubai, United Arab Emirate
                         </p>

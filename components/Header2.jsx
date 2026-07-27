@@ -207,10 +207,12 @@ const Header2 = ({ lenisRef }) => {
 
             <div
                 ref={overlayRef}
+                onClick={() => setIsOpen(false)}
                 className="w-full h-screen bg-black/40  fixed inset-0  flex justify-center items-start  z-60 opacity-0 pointer-events-none hidden"
             >
                 <div
                     ref={menuRef}
+                    onClick={(e) => e.stopPropagation()}
                     className=" w-[250px] md:w-[275px] xl:w-[350px] 2xl:w-[375px]  fixed top-3 xl:top-4 right-4  xl:right-8 bg-[#f3eee8] backdrop-blur-xl rounded-[22px] xl:rounded-[28px] px-5 py-5  xl:px-7 xl:py-6 "
                 >
                     <button
