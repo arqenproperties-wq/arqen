@@ -163,7 +163,7 @@ const Header = ({ lenisRef }) => {
                             English
                         </h1>
                     </div> */}
-                    <div
+                    {/* <div
                         ref={arqenRef}
                         className="
                             px-[14px] md:px-[18px] xl:px-[24px] py-[6px] md:py-[8px] xl:py-[10px] cursor-pointer
@@ -188,7 +188,7 @@ const Header = ({ lenisRef }) => {
                             height={500}
                             className="w-[20px] h-auto object-contain ml-2"
                         />
-                    </div>
+                    </div> */}
                     <div ref={moreRef} onClick={() => setIsOpen(true)} className='flex justify-center items-center gap-2 xl:gap-3 cursor-pointer'>
                         <Image
                             src="/two-lines.svg"
