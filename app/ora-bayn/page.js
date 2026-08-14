@@ -4,8 +4,7 @@ const page = () => {
     return (
         <div className="w-full h-screen">
             <iframe
-                // src="https://arqen-lead-flow.base44.app/"
-                src="https://frond-f-living.base44.app/"
+                src="https://bayn-coastal-life.base44.app/"
                 className="w-full h-full border-0"
                 title="Palm Jebel Ali Lead Flow"
                 loading="lazy"
